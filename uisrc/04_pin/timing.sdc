@@ -1,0 +1,1 @@
+create_clock -name I_sysclk -period 40 -waveform {0 20} [get_ports {I_sysclk}]

@@ -1,0 +1,1095 @@
+Created by          : Tang Dynasty v6.2.168116
+                    : Copyright (c) 2012-2025 Anlogic Inc.
+Generated           : Wed Nov  4 23:46:55 2026
+
+Top Model           : run_led
+Device              : EG4D20EG176
+Speed               : NA
+STA coverage        : 90.69%
+Constraint File     : D:/git/my8051/uisrc/04_pin/timing.sdc;
+Confidence          : Placed
+Check Corner        : Both (Slow and Fast)
+CRPR Enabled        : Yes
+Report Scheme       : 10 end point(s) per path group, 1 path(s) per end point
+
+
+Check Status
+-------------
+
+Corner   | Max      Min     
+------------------------------------
+Slow     | yes      yes     
+Fast     | yes      yes     
+
+
+Timing Status
+--------------------
+	SWNS: 36.236ns, STNS: 0.000ns
+	HWNS: 0.364ns, HTNS: 0.000ns
+	Period Check WNS: 0.000ns
+
+
+Clock Summary
+--------------------
+
+       Clock-Id:       C-Freq       Fanout   Clock-Name
+--------------------------------------------------------------------------------
+           clk0:       25.000           22   I_sysclk
+--------------------------------------------------------------------------------
+
+       Name            Type         Rise(ns)   Fall(ns)          C-Period(ns)     C-Freq(MHz)          R-Period(ns)     R-Freq(MHz)         SWNS(ns)   STNS(ns)         HWNS(ns)   HTNS(ns)         Skew(ns)           Fanout        Max-Level        CC-From    CC-To
+       clk0           local            0.000     20.000                40.000          25.000                 3.764         265.675           36.236      0.000            0.364      0.000            0.000               22                5             no       no
+
+Notes
+----------
+C-Period  :  constraint period
+C-Freq    :  constraint freq
+R-Period  :  report min period
+R-Freq    :  report fmax
+CC-From   :  has path(s) from cross-domain clock
+CC-To     :  has path(s) to cross-domain clock
+
+
+*   Clock R-Period data only takes intra-clock timing. SWNS/STNS/HWNS/HTNS take both intra-clock and inter-clock timing.
+*   If there is mismatch between R-Period and SWNS, check inter-clock timing of this clock as capture clock.
+*   SWNS/STNS/HWNS/HTNS of timing exception (SMCP/SMD) only counted in global Timing Status, not counted in Clock Summary.
+
+Intra clock domain timing
+--------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+Path Group     :     I_sysclk -> I_sysclk
+Type           :     Self
+From Clock     :     I_sysclk
+To Clock       :     I_sysclk
+Min Period     :     3.764ns
+Fmax           :     265.675MHz
+
+Statistics:
+Max            : SWNS     36.236ns, STNS      0.000ns,         0 Viol Endpoints,        37 Total Endpoints,       430 Paths Analyzed
+Min            : HWNS      0.364ns, HTNS      0.000ns,         0 Viol Endpoints,        37 Total Endpoints,       430 Paths Analyzed
+----------------------------------------------------------------------------------------------------
+
+Max Paths
+----------------------------------------------------------------------------------------------------
+Slack               : 36.236ns
+Begin Point         : T_INR_CNT_reg[11]_syn_4.clk (rising edge triggered by clock I_sysclk  { rise@0.000000ns  fall@20.000000ns  period=40.000000 })
+End Point           : O_LED[0]_syn_6.ce (rising edge triggered by clock I_sysclk  { rise@0.000000ns  fall@20.000000ns  period=40.000000 })
+Check Type          : setup
+Process             : slow
+Budget              : 40.000ns { I_sysclk rising@40.000ns - I_sysclk rising@0.000ns }
+Data Path Delay     : 3.881ns (cell 1.731ns (44%), net 2.150ns (56%))
+Clock Skew          : 0.000ns
+Logic Level         : 3 ( LUT5=3 )
+Max Fanout          : 8
+Clock Uncertainty   : 0.000ns (sdc uncertainty: 0.000ns, default uncertainty: 0.000ns)
+
+Delay Type          Location             Incr           Path   Level  Netlist Info
+--------------------------------------------------------------------  ---------------
+source latency                          0.000          0.000               
+port                P61                 0.000          0.000          pin: I_sysclk
+hierarchy                               0.000          0.000          pin: I_sysclk_syn_2.ipad
+PAD                 x014y000            0.000          0.000          pin: I_sysclk_syn_2.di
+net (fo=22)                             0.000          0.000          net: I_sysclk_dup_1,  ../../uisrc/01_rtl/key_top.v(35)
+                                                                      pin: T_INR_CNT_reg[11]_syn_4.clk
+launch edge                             0.000    r     0.000               
+--------------------------------------------------------------------  ---------------
+clk2q               x030y028z0          0.146    r     0.146          pin: T_INR_CNT_reg[11]_syn_4.q[0]
+net (fo=3)                              0.200          0.346          net: T_INR_CNT[11],  ../../uisrc/01_rtl/key_top.v(41)
+                                                                      pin: T_INR_CNT_reg[10]_syn_4.a[1]
+LUT5                x031y027z2          0.424    f     0.770       1  pin: T_INR_CNT_reg[10]_syn_4.f[1]
+net (fo=2)                              0.150          0.920          net: LED_r_reg[1]_syn_6,  ../../uisrc/01_rtl/key_top.v(56)
+                                                                      pin: LED_r_reg[1]_syn_21.b[1]
+LUT5                x031y028z1          0.543    f     1.463       2  pin: LED_r_reg[1]_syn_21.fx[0]
+net (fo=2)                              0.200          1.663          net: LED_r_reg[1]_syn_8,  ../../uisrc/01_rtl/key_top.v(56)
+                                                                      pin: LED_r_reg[1]_syn_19.a[1]
+LUT5                x033y028z0          0.618    f     2.281       3  pin: LED_r_reg[1]_syn_19.fx[0]
+net (fo=8)                              1.600          3.881          net: LED_r_b_n,  NOFILE(0)
+                                                                      pin: O_LED[0]_syn_6.ce
+PAD (reg)           x040y005            0.000    f     3.881               
+--------------------------------------------------------------------  ---------------
+Arrival                                                3.881               
+
+source latency                          0.000          0.000               
+port                P61                 0.000          0.000          pin: I_sysclk
+hierarchy                               0.000          0.000          pin: I_sysclk_syn_2.ipad
+PAD                 x014y000            0.000          0.000          pin: I_sysclk_syn_2.di
+net (fo=22)                             0.000          0.000          net: I_sysclk_dup_1,  ../../uisrc/01_rtl/key_top.v(35)
+                                                                      pin: O_LED[0]_syn_6.osclk
+capture edge                           40.000    r    40.000               
+--------------------------------------------------------------------  ---------------
+setup                                   0.117         40.117               
+clock uncertainty                       0.000         40.117               
+clock pessimism                         0.000         40.117               
+--------------------------------------------------------------------  ---------------
+Required                                              40.117               
+--------------------------------------------------------------------  ---------------
+Slack                                                 36.236               
+
+Slack               : 36.382ns
+Begin Point         : T_INR_CNT_reg[11]_syn_4.clk (rising edge triggered by clock I_sysclk  { rise@0.000000ns  fall@20.000000ns  period=40.000000 })
+End Point           : LED_r_reg[1]_syn_25.d[0] (rising edge triggered by clock I_sysclk  { rise@0.000000ns  fall@20.000000ns  period=40.000000 })
+Check Type          : setup
+Process             : slow
+Budget              : 40.000ns { I_sysclk rising@40.000ns - I_sysclk rising@0.000ns }
+Data Path Delay     : 3.502ns (cell 2.102ns (60%), net 1.400ns (40%))
+Clock Skew          : 0.000ns
+Logic Level         : 4 ( LUT5=3  LUT3=1 )
+Max Fanout          : 8
+Clock Uncertainty   : 0.000ns (sdc uncertainty: 0.000ns, default uncertainty: 0.000ns)
+
+Delay Type          Location             Incr           Path   Level  Netlist Info
+--------------------------------------------------------------------  ---------------
+source latency                          0.000          0.000               
+port                P61                 0.000          0.000          pin: I_sysclk
+hierarchy                               0.000          0.000          pin: I_sysclk_syn_2.ipad
+PAD                 x014y000            0.000          0.000          pin: I_sysclk_syn_2.di
+net (fo=22)                             0.000          0.000          net: I_sysclk_dup_1,  ../../uisrc/01_rtl/key_top.v(35)
+                                                                      pin: T_INR_CNT_reg[11]_syn_4.clk
+launch edge                             0.000    r     0.000               
+--------------------------------------------------------------------  ---------------
+clk2q               x030y028z0          0.146    r     0.146          pin: T_INR_CNT_reg[11]_syn_4.q[0]
+net (fo=3)                              0.200          0.346          net: T_INR_CNT[11],  ../../uisrc/01_rtl/key_top.v(41)
+                                                                      pin: T_INR_CNT_reg[10]_syn_4.a[1]
+LUT5                x031y027z2          0.424    f     0.770       1  pin: T_INR_CNT_reg[10]_syn_4.f[1]
+net (fo=2)                              0.150          0.920          net: LED_r_reg[1]_syn_6,  ../../uisrc/01_rtl/key_top.v(56)
+                                                                      pin: LED_r_reg[1]_syn_21.b[1]
+LUT5                x031y028z1          0.543    f     1.463       2  pin: LED_r_reg[1]_syn_21.fx[0]
+net (fo=2)                              0.200          1.663          net: LED_r_reg[1]_syn_8,  ../../uisrc/01_rtl/key_top.v(56)
+                                                                      pin: LED_r_reg[1]_syn_19.a[1]
+LUT5                x033y028z0          0.618    f     2.281       3  pin: LED_r_reg[1]_syn_19.fx[0]
+net (fo=8)                              0.850          3.131          net: LED_r_b_n,  NOFILE(0)
+                                                                      pin: LED_r_reg[1]_syn_25.d[0]
+LUT3 (reg)          x038y018z3          0.371    r     3.502       4  net: O_LED[1]_dup_3,  ../../uisrc/01_rtl/key_top.v(37)
+--------------------------------------------------------------------  ---------------
+Arrival                                                3.502               
+
+source latency                          0.000          0.000               
+port                P61                 0.000          0.000          pin: I_sysclk
+hierarchy                               0.000          0.000          pin: I_sysclk_syn_2.ipad
+PAD                 x014y000            0.000          0.000          pin: I_sysclk_syn_2.di
+net (fo=22)                             0.000          0.000          net: I_sysclk_dup_1,  ../../uisrc/01_rtl/key_top.v(35)
+                                                                      pin: LED_r_reg[1]_syn_25.clk
+capture edge                           40.000    r    40.000               
+--------------------------------------------------------------------  ---------------
+setup                                  -0.116         39.884               
+clock uncertainty                       0.000         39.884               
+clock pessimism                         0.000         39.884               
+--------------------------------------------------------------------  ---------------
+Required                                              39.884               
+--------------------------------------------------------------------  ---------------
+Slack                                                 36.382               
+
+Slack               : 36.582ns
+Begin Point         : T_INR_CNT_reg[11]_syn_4.clk (rising edge triggered by clock I_sysclk  { rise@0.000000ns  fall@20.000000ns  period=40.000000 })
+End Point           : LED_r_reg[0]_syn_7.d[0] (rising edge triggered by clock I_sysclk  { rise@0.000000ns  fall@20.000000ns  period=40.000000 })
+Check Type          : setup
+Process             : slow
+Budget              : 40.000ns { I_sysclk rising@40.000ns - I_sysclk rising@0.000ns }
+Data Path Delay     : 3.302ns (cell 2.102ns (63%), net 1.200ns (37%))
+Clock Skew          : 0.000ns
+Logic Level         : 4 ( LUT5=3  LUT3=1 )
+Max Fanout          : 8
+Clock Uncertainty   : 0.000ns (sdc uncertainty: 0.000ns, default uncertainty: 0.000ns)
+
+Delay Type          Location             Incr           Path   Level  Netlist Info
+--------------------------------------------------------------------  ---------------
+source latency                          0.000          0.000               
+port                P61                 0.000          0.000          pin: I_sysclk
+hierarchy                               0.000          0.000          pin: I_sysclk_syn_2.ipad
+PAD                 x014y000            0.000          0.000          pin: I_sysclk_syn_2.di
+net (fo=22)                             0.000          0.000          net: I_sysclk_dup_1,  ../../uisrc/01_rtl/key_top.v(35)
+                                                                      pin: T_INR_CNT_reg[11]_syn_4.clk
+launch edge                             0.000    r     0.000               
+--------------------------------------------------------------------  ---------------
+clk2q               x030y028z0          0.146    r     0.146          pin: T_INR_CNT_reg[11]_syn_4.q[0]
+net (fo=3)                              0.200          0.346          net: T_INR_CNT[11],  ../../uisrc/01_rtl/key_top.v(41)
+                                                                      pin: T_INR_CNT_reg[10]_syn_4.a[1]
+LUT5                x031y027z2          0.424    f     0.770       1  pin: T_INR_CNT_reg[10]_syn_4.f[1]
+net (fo=2)                              0.150          0.920          net: LED_r_reg[1]_syn_6,  ../../uisrc/01_rtl/key_top.v(56)
+                                                                      pin: LED_r_reg[1]_syn_21.b[1]
+LUT5                x031y028z1          0.543    f     1.463       2  pin: LED_r_reg[1]_syn_21.fx[0]
+net (fo=2)                              0.200          1.663          net: LED_r_reg[1]_syn_8,  ../../uisrc/01_rtl/key_top.v(56)
+                                                                      pin: LED_r_reg[1]_syn_19.a[1]
+LUT5                x033y028z0          0.618    f     2.281       3  pin: LED_r_reg[1]_syn_19.fx[0]
+net (fo=8)                              0.650          2.931          net: LED_r_b_n,  NOFILE(0)
+                                                                      pin: LED_r_reg[0]_syn_7.d[0]
+LUT3 (reg)          x038y022z3          0.371    r     3.302       4  net: O_LED[2]_dup_3,  ../../uisrc/01_rtl/key_top.v(37)
+--------------------------------------------------------------------  ---------------
+Arrival                                                3.302               
+
+source latency                          0.000          0.000               
+port                P61                 0.000          0.000          pin: I_sysclk
+hierarchy                               0.000          0.000          pin: I_sysclk_syn_2.ipad
+PAD                 x014y000            0.000          0.000          pin: I_sysclk_syn_2.di
+net (fo=22)                             0.000          0.000          net: I_sysclk_dup_1,  ../../uisrc/01_rtl/key_top.v(35)
+                                                                      pin: LED_r_reg[0]_syn_7.clk
+capture edge                           40.000    r    40.000               
+--------------------------------------------------------------------  ---------------
+setup                                  -0.116         39.884               
+clock uncertainty                       0.000         39.884               
+clock pessimism                         0.000         39.884               
+--------------------------------------------------------------------  ---------------
+Required                                              39.884               
+--------------------------------------------------------------------  ---------------
+Slack                                                 36.582               
+
+Slack               : 36.582ns
+Begin Point         : T_INR_CNT_reg[11]_syn_4.clk (rising edge triggered by clock I_sysclk  { rise@0.000000ns  fall@20.000000ns  period=40.000000 })
+End Point           : LED_r_reg[0]_syn_7.d[1] (rising edge triggered by clock I_sysclk  { rise@0.000000ns  fall@20.000000ns  period=40.000000 })
+Check Type          : setup
+Process             : slow
+Budget              : 40.000ns { I_sysclk rising@40.000ns - I_sysclk rising@0.000ns }
+Data Path Delay     : 3.302ns (cell 2.102ns (63%), net 1.200ns (37%))
+Clock Skew          : 0.000ns
+Logic Level         : 4 ( LUT5=3  LUT3=1 )
+Max Fanout          : 8
+Clock Uncertainty   : 0.000ns (sdc uncertainty: 0.000ns, default uncertainty: 0.000ns)
+
+Delay Type          Location             Incr           Path   Level  Netlist Info
+--------------------------------------------------------------------  ---------------
+source latency                          0.000          0.000               
+port                P61                 0.000          0.000          pin: I_sysclk
+hierarchy                               0.000          0.000          pin: I_sysclk_syn_2.ipad
+PAD                 x014y000            0.000          0.000          pin: I_sysclk_syn_2.di
+net (fo=22)                             0.000          0.000          net: I_sysclk_dup_1,  ../../uisrc/01_rtl/key_top.v(35)
+                                                                      pin: T_INR_CNT_reg[11]_syn_4.clk
+launch edge                             0.000    r     0.000               
+--------------------------------------------------------------------  ---------------
+clk2q               x030y028z0          0.146    r     0.146          pin: T_INR_CNT_reg[11]_syn_4.q[0]
+net (fo=3)                              0.200          0.346          net: T_INR_CNT[11],  ../../uisrc/01_rtl/key_top.v(41)
+                                                                      pin: T_INR_CNT_reg[10]_syn_4.a[1]
+LUT5                x031y027z2          0.424    f     0.770       1  pin: T_INR_CNT_reg[10]_syn_4.f[1]
+net (fo=2)                              0.150          0.920          net: LED_r_reg[1]_syn_6,  ../../uisrc/01_rtl/key_top.v(56)
+                                                                      pin: LED_r_reg[1]_syn_21.b[1]
+LUT5                x031y028z1          0.543    f     1.463       2  pin: LED_r_reg[1]_syn_21.fx[0]
+net (fo=2)                              0.200          1.663          net: LED_r_reg[1]_syn_8,  ../../uisrc/01_rtl/key_top.v(56)
+                                                                      pin: LED_r_reg[1]_syn_19.a[1]
+LUT5                x033y028z0          0.618    f     2.281       3  pin: LED_r_reg[1]_syn_19.fx[0]
+net (fo=8)                              0.650          2.931          net: LED_r_b_n,  NOFILE(0)
+                                                                      pin: LED_r_reg[0]_syn_7.d[1]
+LUT3 (reg)          x038y022z3          0.371    r     3.302       4  net: O_LED[0]_dup_5,  ../../uisrc/01_rtl/key_top.v(37)
+--------------------------------------------------------------------  ---------------
+Arrival                                                3.302               
+
+source latency                          0.000          0.000               
+port                P61                 0.000          0.000          pin: I_sysclk
+hierarchy                               0.000          0.000          pin: I_sysclk_syn_2.ipad
+PAD                 x014y000            0.000          0.000          pin: I_sysclk_syn_2.di
+net (fo=22)                             0.000          0.000          net: I_sysclk_dup_1,  ../../uisrc/01_rtl/key_top.v(35)
+                                                                      pin: LED_r_reg[0]_syn_7.clk
+capture edge                           40.000    r    40.000               
+--------------------------------------------------------------------  ---------------
+setup                                  -0.116         39.884               
+clock uncertainty                       0.000         39.884               
+clock pessimism                         0.000         39.884               
+--------------------------------------------------------------------  ---------------
+Required                                              39.884               
+--------------------------------------------------------------------  ---------------
+Slack                                                 36.582               
+
+Slack               : 36.889ns
+Begin Point         : T_INR_CNT_reg[11]_syn_4.clk (rising edge triggered by clock I_sysclk  { rise@0.000000ns  fall@20.000000ns  period=40.000000 })
+End Point           : LED_r_reg[3]_syn_7.d[0] (rising edge triggered by clock I_sysclk  { rise@0.000000ns  fall@20.000000ns  period=40.000000 })
+Check Type          : setup
+Process             : slow
+Budget              : 40.000ns { I_sysclk rising@40.000ns - I_sysclk rising@0.000ns }
+Data Path Delay     : 2.995ns (cell 2.045ns (68%), net 0.950ns (32%))
+Clock Skew          : 0.000ns
+Logic Level         : 4 ( LUT5=3  LUT3=1 )
+Max Fanout          : 8
+Clock Uncertainty   : 0.000ns (sdc uncertainty: 0.000ns, default uncertainty: 0.000ns)
+
+Delay Type          Location             Incr           Path   Level  Netlist Info
+--------------------------------------------------------------------  ---------------
+source latency                          0.000          0.000               
+port                P61                 0.000          0.000          pin: I_sysclk
+hierarchy                               0.000          0.000          pin: I_sysclk_syn_2.ipad
+PAD                 x014y000            0.000          0.000          pin: I_sysclk_syn_2.di
+net (fo=22)                             0.000          0.000          net: I_sysclk_dup_1,  ../../uisrc/01_rtl/key_top.v(35)
+                                                                      pin: T_INR_CNT_reg[11]_syn_4.clk
+launch edge                             0.000    r     0.000               
+--------------------------------------------------------------------  ---------------
+clk2q               x030y028z0          0.146    r     0.146          pin: T_INR_CNT_reg[11]_syn_4.q[0]
+net (fo=3)                              0.200          0.346          net: T_INR_CNT[11],  ../../uisrc/01_rtl/key_top.v(41)
+                                                                      pin: T_INR_CNT_reg[10]_syn_4.a[1]
+LUT5                x031y027z2          0.424    f     0.770       1  pin: T_INR_CNT_reg[10]_syn_4.f[1]
+net (fo=2)                              0.150          0.920          net: LED_r_reg[1]_syn_6,  ../../uisrc/01_rtl/key_top.v(56)
+                                                                      pin: LED_r_reg[1]_syn_21.b[1]
+LUT5                x031y028z1          0.543    f     1.463       2  pin: LED_r_reg[1]_syn_21.fx[0]
+net (fo=2)                              0.200          1.663          net: LED_r_reg[1]_syn_8,  ../../uisrc/01_rtl/key_top.v(56)
+                                                                      pin: LED_r_reg[1]_syn_19.a[1]
+LUT5                x033y028z0          0.618    f     2.281       3  pin: LED_r_reg[1]_syn_19.fx[0]
+net (fo=8)                              0.400          2.681          net: LED_r_b_n,  NOFILE(0)
+                                                                      pin: LED_r_reg[3]_syn_7.d[0]
+LUT3 (reg)          x038y027z0          0.314    r     2.995       4  net: O_LED[3]_dup_5,  ../../uisrc/01_rtl/key_top.v(37)
+--------------------------------------------------------------------  ---------------
+Arrival                                                2.995               
+
+source latency                          0.000          0.000               
+port                P61                 0.000          0.000          pin: I_sysclk
+hierarchy                               0.000          0.000          pin: I_sysclk_syn_2.ipad
+PAD                 x014y000            0.000          0.000          pin: I_sysclk_syn_2.di
+net (fo=22)                             0.000          0.000          net: I_sysclk_dup_1,  ../../uisrc/01_rtl/key_top.v(35)
+                                                                      pin: LED_r_reg[3]_syn_7.clk
+capture edge                           40.000    r    40.000               
+--------------------------------------------------------------------  ---------------
+setup                                  -0.116         39.884               
+clock uncertainty                       0.000         39.884               
+clock pessimism                         0.000         39.884               
+--------------------------------------------------------------------  ---------------
+Required                                              39.884               
+--------------------------------------------------------------------  ---------------
+Slack                                                 36.889               
+
+Slack               : 36.986ns
+Begin Point         : T_INR_CNT_reg[11]_syn_4.clk (rising edge triggered by clock I_sysclk  { rise@0.000000ns  fall@20.000000ns  period=40.000000 })
+End Point           : O_LED[1]_syn_4.ce (rising edge triggered by clock I_sysclk  { rise@0.000000ns  fall@20.000000ns  period=40.000000 })
+Check Type          : setup
+Process             : slow
+Budget              : 40.000ns { I_sysclk rising@40.000ns - I_sysclk rising@0.000ns }
+Data Path Delay     : 3.131ns (cell 1.731ns (55%), net 1.400ns (45%))
+Clock Skew          : 0.000ns
+Logic Level         : 3 ( LUT5=3 )
+Max Fanout          : 8
+Clock Uncertainty   : 0.000ns (sdc uncertainty: 0.000ns, default uncertainty: 0.000ns)
+
+Delay Type          Location             Incr           Path   Level  Netlist Info
+--------------------------------------------------------------------  ---------------
+source latency                          0.000          0.000               
+port                P61                 0.000          0.000          pin: I_sysclk
+hierarchy                               0.000          0.000          pin: I_sysclk_syn_2.ipad
+PAD                 x014y000            0.000          0.000          pin: I_sysclk_syn_2.di
+net (fo=22)                             0.000          0.000          net: I_sysclk_dup_1,  ../../uisrc/01_rtl/key_top.v(35)
+                                                                      pin: T_INR_CNT_reg[11]_syn_4.clk
+launch edge                             0.000    r     0.000               
+--------------------------------------------------------------------  ---------------
+clk2q               x030y028z0          0.146    r     0.146          pin: T_INR_CNT_reg[11]_syn_4.q[0]
+net (fo=3)                              0.200          0.346          net: T_INR_CNT[11],  ../../uisrc/01_rtl/key_top.v(41)
+                                                                      pin: T_INR_CNT_reg[10]_syn_4.a[1]
+LUT5                x031y027z2          0.424    f     0.770       1  pin: T_INR_CNT_reg[10]_syn_4.f[1]
+net (fo=2)                              0.150          0.920          net: LED_r_reg[1]_syn_6,  ../../uisrc/01_rtl/key_top.v(56)
+                                                                      pin: LED_r_reg[1]_syn_21.b[1]
+LUT5                x031y028z1          0.543    f     1.463       2  pin: LED_r_reg[1]_syn_21.fx[0]
+net (fo=2)                              0.200          1.663          net: LED_r_reg[1]_syn_8,  ../../uisrc/01_rtl/key_top.v(56)
+                                                                      pin: LED_r_reg[1]_syn_19.a[1]
+LUT5                x033y028z0          0.618    f     2.281       3  pin: LED_r_reg[1]_syn_19.fx[0]
+net (fo=8)                              0.850          3.131          net: LED_r_b_n,  NOFILE(0)
+                                                                      pin: O_LED[1]_syn_4.ce
+PAD (reg)           x040y020            0.000    f     3.131               
+--------------------------------------------------------------------  ---------------
+Arrival                                                3.131               
+
+source latency                          0.000          0.000               
+port                P61                 0.000          0.000          pin: I_sysclk
+hierarchy                               0.000          0.000          pin: I_sysclk_syn_2.ipad
+PAD                 x014y000            0.000          0.000          pin: I_sysclk_syn_2.di
+net (fo=22)                             0.000          0.000          net: I_sysclk_dup_1,  ../../uisrc/01_rtl/key_top.v(35)
+                                                                      pin: O_LED[1]_syn_4.osclk
+capture edge                           40.000    r    40.000               
+--------------------------------------------------------------------  ---------------
+setup                                   0.117         40.117               
+clock uncertainty                       0.000         40.117               
+clock pessimism                         0.000         40.117               
+--------------------------------------------------------------------  ---------------
+Required                                              40.117               
+--------------------------------------------------------------------  ---------------
+Slack                                                 36.986               
+
+Slack               : 36.994ns
+Begin Point         : T_INR_CNT_reg[11]_syn_4.clk (rising edge triggered by clock I_sysclk  { rise@0.000000ns  fall@20.000000ns  period=40.000000 })
+End Point           : T_INR_CNT_reg[18]_syn_4.d[0] (rising edge triggered by clock I_sysclk  { rise@0.000000ns  fall@20.000000ns  period=40.000000 })
+Check Type          : setup
+Process             : slow
+Budget              : 40.000ns { I_sysclk rising@40.000ns - I_sysclk rising@0.000ns }
+Data Path Delay     : 2.890ns (cell 2.140ns (74%), net 0.750ns (26%))
+Clock Skew          : 0.000ns
+Logic Level         : 5 ( LUT5=3  LUT4=1  LUT2=1 )
+Max Fanout          : 12
+Clock Uncertainty   : 0.000ns (sdc uncertainty: 0.000ns, default uncertainty: 0.000ns)
+
+Delay Type          Location             Incr           Path   Level  Netlist Info
+--------------------------------------------------------------------  ---------------
+source latency                          0.000          0.000               
+port                P61                 0.000          0.000          pin: I_sysclk
+hierarchy                               0.000          0.000          pin: I_sysclk_syn_2.ipad
+PAD                 x014y000            0.000          0.000          pin: I_sysclk_syn_2.di
+net (fo=22)                             0.000          0.000          net: I_sysclk_dup_1,  ../../uisrc/01_rtl/key_top.v(35)
+                                                                      pin: T_INR_CNT_reg[11]_syn_4.clk
+launch edge                             0.000    r     0.000               
+--------------------------------------------------------------------  ---------------
+clk2q               x030y028z0          0.146    r     0.146          pin: T_INR_CNT_reg[11]_syn_4.q[0]
+net (fo=3)                              0.150          0.296          net: T_INR_CNT[11],  ../../uisrc/01_rtl/key_top.v(41)
+                                                                      pin: T_INR_CNT_reg[14]_syn_4.a[0]
+LUT4                x031y028z0          0.408    f     0.704       1  pin: T_INR_CNT_reg[14]_syn_4.f[0]
+net (fo=1)                              0.100          0.804          net: T_INR_CNT_b[20]_syn_6,  NOFILE(0)
+                                                                      pin: T_INR_CNT_reg[15]_syn_4.a[0]
+LUT5                x031y028z2          0.424    f     1.228       2  pin: T_INR_CNT_reg[15]_syn_4.f[0]
+net (fo=1)                              0.100          1.328          net: T_INR_CNT_b[20]_syn_8,  NOFILE(0)
+                                                                      pin: T_INR_CNT_reg[15]_syn_4.a[1]
+LUT5                x031y028z2          0.424    f     1.752       3  pin: T_INR_CNT_reg[15]_syn_4.f[1]
+net (fo=1)                              0.150          1.902          net: T_INR_CNT_b[20]_syn_10,  NOFILE(0)
+                                                                      pin: T_INR_CNT_reg[7]_syn_4.a[0]
+LUT5                x031y027z3          0.424    f     2.326       4  pin: T_INR_CNT_reg[7]_syn_4.f[0]
+net (fo=12)                             0.250          2.576          net: T_INR_CNT_b_n,  NOFILE(0)
+                                                                      pin: T_INR_CNT_reg[18]_syn_4.d[0]
+LUT2 (reg)          x030y029z1          0.314    r     2.890       5  net: T_INR_CNT[19],  ../../uisrc/01_rtl/key_top.v(41)
+--------------------------------------------------------------------  ---------------
+Arrival                                                2.890               
+
+source latency                          0.000          0.000               
+port                P61                 0.000          0.000          pin: I_sysclk
+hierarchy                               0.000          0.000          pin: I_sysclk_syn_2.ipad
+PAD                 x014y000            0.000          0.000          pin: I_sysclk_syn_2.di
+net (fo=22)                             0.000          0.000          net: I_sysclk_dup_1,  ../../uisrc/01_rtl/key_top.v(35)
+                                                                      pin: T_INR_CNT_reg[18]_syn_4.clk
+capture edge                           40.000    r    40.000               
+--------------------------------------------------------------------  ---------------
+setup                                  -0.116         39.884               
+clock uncertainty                       0.000         39.884               
+clock pessimism                         0.000         39.884               
+--------------------------------------------------------------------  ---------------
+Required                                              39.884               
+--------------------------------------------------------------------  ---------------
+Slack                                                 36.994               
+
+Slack               : 36.994ns
+Begin Point         : T_INR_CNT_reg[11]_syn_4.clk (rising edge triggered by clock I_sysclk  { rise@0.000000ns  fall@20.000000ns  period=40.000000 })
+End Point           : T_INR_CNT_reg[18]_syn_4.d[1] (rising edge triggered by clock I_sysclk  { rise@0.000000ns  fall@20.000000ns  period=40.000000 })
+Check Type          : setup
+Process             : slow
+Budget              : 40.000ns { I_sysclk rising@40.000ns - I_sysclk rising@0.000ns }
+Data Path Delay     : 2.890ns (cell 2.140ns (74%), net 0.750ns (26%))
+Clock Skew          : 0.000ns
+Logic Level         : 5 ( LUT5=3  LUT4=1  LUT2=1 )
+Max Fanout          : 12
+Clock Uncertainty   : 0.000ns (sdc uncertainty: 0.000ns, default uncertainty: 0.000ns)
+
+Delay Type          Location             Incr           Path   Level  Netlist Info
+--------------------------------------------------------------------  ---------------
+source latency                          0.000          0.000               
+port                P61                 0.000          0.000          pin: I_sysclk
+hierarchy                               0.000          0.000          pin: I_sysclk_syn_2.ipad
+PAD                 x014y000            0.000          0.000          pin: I_sysclk_syn_2.di
+net (fo=22)                             0.000          0.000          net: I_sysclk_dup_1,  ../../uisrc/01_rtl/key_top.v(35)
+                                                                      pin: T_INR_CNT_reg[11]_syn_4.clk
+launch edge                             0.000    r     0.000               
+--------------------------------------------------------------------  ---------------
+clk2q               x030y028z0          0.146    r     0.146          pin: T_INR_CNT_reg[11]_syn_4.q[0]
+net (fo=3)                              0.150          0.296          net: T_INR_CNT[11],  ../../uisrc/01_rtl/key_top.v(41)
+                                                                      pin: T_INR_CNT_reg[14]_syn_4.a[0]
+LUT4                x031y028z0          0.408    f     0.704       1  pin: T_INR_CNT_reg[14]_syn_4.f[0]
+net (fo=1)                              0.100          0.804          net: T_INR_CNT_b[20]_syn_6,  NOFILE(0)
+                                                                      pin: T_INR_CNT_reg[15]_syn_4.a[0]
+LUT5                x031y028z2          0.424    f     1.228       2  pin: T_INR_CNT_reg[15]_syn_4.f[0]
+net (fo=1)                              0.100          1.328          net: T_INR_CNT_b[20]_syn_8,  NOFILE(0)
+                                                                      pin: T_INR_CNT_reg[15]_syn_4.a[1]
+LUT5                x031y028z2          0.424    f     1.752       3  pin: T_INR_CNT_reg[15]_syn_4.f[1]
+net (fo=1)                              0.150          1.902          net: T_INR_CNT_b[20]_syn_10,  NOFILE(0)
+                                                                      pin: T_INR_CNT_reg[7]_syn_4.a[0]
+LUT5                x031y027z3          0.424    f     2.326       4  pin: T_INR_CNT_reg[7]_syn_4.f[0]
+net (fo=12)                             0.250          2.576          net: T_INR_CNT_b_n,  NOFILE(0)
+                                                                      pin: T_INR_CNT_reg[18]_syn_4.d[1]
+LUT2 (reg)          x030y029z1          0.314    r     2.890       5  net: T_INR_CNT[18],  ../../uisrc/01_rtl/key_top.v(41)
+--------------------------------------------------------------------  ---------------
+Arrival                                                2.890               
+
+source latency                          0.000          0.000               
+port                P61                 0.000          0.000          pin: I_sysclk
+hierarchy                               0.000          0.000          pin: I_sysclk_syn_2.ipad
+PAD                 x014y000            0.000          0.000          pin: I_sysclk_syn_2.di
+net (fo=22)                             0.000          0.000          net: I_sysclk_dup_1,  ../../uisrc/01_rtl/key_top.v(35)
+                                                                      pin: T_INR_CNT_reg[18]_syn_4.clk
+capture edge                           40.000    r    40.000               
+--------------------------------------------------------------------  ---------------
+setup                                  -0.116         39.884               
+clock uncertainty                       0.000         39.884               
+clock pessimism                         0.000         39.884               
+--------------------------------------------------------------------  ---------------
+Required                                              39.884               
+--------------------------------------------------------------------  ---------------
+Slack                                                 36.994               
+
+Slack               : 36.994ns
+Begin Point         : T_INR_CNT_reg[11]_syn_4.clk (rising edge triggered by clock I_sysclk  { rise@0.000000ns  fall@20.000000ns  period=40.000000 })
+End Point           : T_INR_CNT_reg[20]_syn_4.d[0] (rising edge triggered by clock I_sysclk  { rise@0.000000ns  fall@20.000000ns  period=40.000000 })
+Check Type          : setup
+Process             : slow
+Budget              : 40.000ns { I_sysclk rising@40.000ns - I_sysclk rising@0.000ns }
+Data Path Delay     : 2.890ns (cell 2.140ns (74%), net 0.750ns (26%))
+Clock Skew          : 0.000ns
+Logic Level         : 5 ( LUT5=3  LUT4=1  LUT2=1 )
+Max Fanout          : 12
+Clock Uncertainty   : 0.000ns (sdc uncertainty: 0.000ns, default uncertainty: 0.000ns)
+
+Delay Type          Location             Incr           Path   Level  Netlist Info
+--------------------------------------------------------------------  ---------------
+source latency                          0.000          0.000               
+port                P61                 0.000          0.000          pin: I_sysclk
+hierarchy                               0.000          0.000          pin: I_sysclk_syn_2.ipad
+PAD                 x014y000            0.000          0.000          pin: I_sysclk_syn_2.di
+net (fo=22)                             0.000          0.000          net: I_sysclk_dup_1,  ../../uisrc/01_rtl/key_top.v(35)
+                                                                      pin: T_INR_CNT_reg[11]_syn_4.clk
+launch edge                             0.000    r     0.000               
+--------------------------------------------------------------------  ---------------
+clk2q               x030y028z0          0.146    r     0.146          pin: T_INR_CNT_reg[11]_syn_4.q[0]
+net (fo=3)                              0.150          0.296          net: T_INR_CNT[11],  ../../uisrc/01_rtl/key_top.v(41)
+                                                                      pin: T_INR_CNT_reg[14]_syn_4.a[0]
+LUT4                x031y028z0          0.408    f     0.704       1  pin: T_INR_CNT_reg[14]_syn_4.f[0]
+net (fo=1)                              0.100          0.804          net: T_INR_CNT_b[20]_syn_6,  NOFILE(0)
+                                                                      pin: T_INR_CNT_reg[15]_syn_4.a[0]
+LUT5                x031y028z2          0.424    f     1.228       2  pin: T_INR_CNT_reg[15]_syn_4.f[0]
+net (fo=1)                              0.100          1.328          net: T_INR_CNT_b[20]_syn_8,  NOFILE(0)
+                                                                      pin: T_INR_CNT_reg[15]_syn_4.a[1]
+LUT5                x031y028z2          0.424    f     1.752       3  pin: T_INR_CNT_reg[15]_syn_4.f[1]
+net (fo=1)                              0.150          1.902          net: T_INR_CNT_b[20]_syn_10,  NOFILE(0)
+                                                                      pin: T_INR_CNT_reg[7]_syn_4.a[0]
+LUT5                x031y027z3          0.424    f     2.326       4  pin: T_INR_CNT_reg[7]_syn_4.f[0]
+net (fo=12)                             0.250          2.576          net: T_INR_CNT_b_n,  NOFILE(0)
+                                                                      pin: T_INR_CNT_reg[20]_syn_4.d[0]
+LUT2 (reg)          x029y028z1          0.314    r     2.890       5  net: T_INR_CNT[21],  ../../uisrc/01_rtl/key_top.v(41)
+--------------------------------------------------------------------  ---------------
+Arrival                                                2.890               
+
+source latency                          0.000          0.000               
+port                P61                 0.000          0.000          pin: I_sysclk
+hierarchy                               0.000          0.000          pin: I_sysclk_syn_2.ipad
+PAD                 x014y000            0.000          0.000          pin: I_sysclk_syn_2.di
+net (fo=22)                             0.000          0.000          net: I_sysclk_dup_1,  ../../uisrc/01_rtl/key_top.v(35)
+                                                                      pin: T_INR_CNT_reg[20]_syn_4.clk
+capture edge                           40.000    r    40.000               
+--------------------------------------------------------------------  ---------------
+setup                                  -0.116         39.884               
+clock uncertainty                       0.000         39.884               
+clock pessimism                         0.000         39.884               
+--------------------------------------------------------------------  ---------------
+Required                                              39.884               
+--------------------------------------------------------------------  ---------------
+Slack                                                 36.994               
+
+Slack               : 36.994ns
+Begin Point         : T_INR_CNT_reg[11]_syn_4.clk (rising edge triggered by clock I_sysclk  { rise@0.000000ns  fall@20.000000ns  period=40.000000 })
+End Point           : T_INR_CNT_reg[20]_syn_4.d[1] (rising edge triggered by clock I_sysclk  { rise@0.000000ns  fall@20.000000ns  period=40.000000 })
+Check Type          : setup
+Process             : slow
+Budget              : 40.000ns { I_sysclk rising@40.000ns - I_sysclk rising@0.000ns }
+Data Path Delay     : 2.890ns (cell 2.140ns (74%), net 0.750ns (26%))
+Clock Skew          : 0.000ns
+Logic Level         : 5 ( LUT5=3  LUT4=1  LUT2=1 )
+Max Fanout          : 12
+Clock Uncertainty   : 0.000ns (sdc uncertainty: 0.000ns, default uncertainty: 0.000ns)
+
+Delay Type          Location             Incr           Path   Level  Netlist Info
+--------------------------------------------------------------------  ---------------
+source latency                          0.000          0.000               
+port                P61                 0.000          0.000          pin: I_sysclk
+hierarchy                               0.000          0.000          pin: I_sysclk_syn_2.ipad
+PAD                 x014y000            0.000          0.000          pin: I_sysclk_syn_2.di
+net (fo=22)                             0.000          0.000          net: I_sysclk_dup_1,  ../../uisrc/01_rtl/key_top.v(35)
+                                                                      pin: T_INR_CNT_reg[11]_syn_4.clk
+launch edge                             0.000    r     0.000               
+--------------------------------------------------------------------  ---------------
+clk2q               x030y028z0          0.146    r     0.146          pin: T_INR_CNT_reg[11]_syn_4.q[0]
+net (fo=3)                              0.150          0.296          net: T_INR_CNT[11],  ../../uisrc/01_rtl/key_top.v(41)
+                                                                      pin: T_INR_CNT_reg[14]_syn_4.a[0]
+LUT4                x031y028z0          0.408    f     0.704       1  pin: T_INR_CNT_reg[14]_syn_4.f[0]
+net (fo=1)                              0.100          0.804          net: T_INR_CNT_b[20]_syn_6,  NOFILE(0)
+                                                                      pin: T_INR_CNT_reg[15]_syn_4.a[0]
+LUT5                x031y028z2          0.424    f     1.228       2  pin: T_INR_CNT_reg[15]_syn_4.f[0]
+net (fo=1)                              0.100          1.328          net: T_INR_CNT_b[20]_syn_8,  NOFILE(0)
+                                                                      pin: T_INR_CNT_reg[15]_syn_4.a[1]
+LUT5                x031y028z2          0.424    f     1.752       3  pin: T_INR_CNT_reg[15]_syn_4.f[1]
+net (fo=1)                              0.150          1.902          net: T_INR_CNT_b[20]_syn_10,  NOFILE(0)
+                                                                      pin: T_INR_CNT_reg[7]_syn_4.a[0]
+LUT5                x031y027z3          0.424    f     2.326       4  pin: T_INR_CNT_reg[7]_syn_4.f[0]
+net (fo=12)                             0.250          2.576          net: T_INR_CNT_b_n,  NOFILE(0)
+                                                                      pin: T_INR_CNT_reg[20]_syn_4.d[1]
+LUT2 (reg)          x029y028z1          0.314    r     2.890       5  net: T_INR_CNT[20],  ../../uisrc/01_rtl/key_top.v(41)
+--------------------------------------------------------------------  ---------------
+Arrival                                                2.890               
+
+source latency                          0.000          0.000               
+port                P61                 0.000          0.000          pin: I_sysclk
+hierarchy                               0.000          0.000          pin: I_sysclk_syn_2.ipad
+PAD                 x014y000            0.000          0.000          pin: I_sysclk_syn_2.di
+net (fo=22)                             0.000          0.000          net: I_sysclk_dup_1,  ../../uisrc/01_rtl/key_top.v(35)
+                                                                      pin: T_INR_CNT_reg[20]_syn_4.clk
+capture edge                           40.000    r    40.000               
+--------------------------------------------------------------------  ---------------
+setup                                  -0.116         39.884               
+clock uncertainty                       0.000         39.884               
+clock pessimism                         0.000         39.884               
+--------------------------------------------------------------------  ---------------
+Required                                              39.884               
+--------------------------------------------------------------------  ---------------
+Slack                                                 36.994               
+
+
+
+Min Paths
+----------------------------------------------------------------------------------------------------
+Slack               : 0.364ns
+Begin Point         : T_INR_CNT_reg[0]_syn_4.clk (rising edge triggered by clock I_sysclk  { rise@0.000000ns  fall@20.000000ns  period=40.000000 })
+End Point           : T_INR_CNT_reg[0]_syn_4.d[0] (rising edge triggered by clock I_sysclk  { rise@0.000000ns  fall@20.000000ns  period=40.000000 })
+Check Type          : hold
+Process             : fast
+Budget              : 0.000ns { I_sysclk rising@0.000ns - I_sysclk rising@0.000ns }
+Data Path Delay     : 0.425ns (cell 0.325ns (76%), net 0.100ns (24%))
+Clock Skew          : 0.000ns
+Logic Level         : 1 ( LUT1=1 )
+Max Fanout          : 5
+Clock Uncertainty   : 0.000ns (sdc uncertainty: 0.000ns, default uncertainty: 0.000ns)
+
+Delay Type          Location             Incr           Path   Level  Netlist Info
+--------------------------------------------------------------------  ---------------
+source latency                          0.000          0.000               
+port                P61                 0.000          0.000          pin: I_sysclk
+hierarchy                               0.000          0.000          pin: I_sysclk_syn_2.ipad
+PAD                 x014y000            0.000          0.000          pin: I_sysclk_syn_2.di
+net (fo=22)                             0.000          0.000          net: I_sysclk_dup_1,  ../../uisrc/01_rtl/key_top.v(35)
+                                                                      pin: T_INR_CNT_reg[0]_syn_4.clk
+launch edge                             0.000    r     0.000               
+--------------------------------------------------------------------  ---------------
+clk2q               x031y027z0          0.109    f     0.109          pin: T_INR_CNT_reg[0]_syn_4.q[0]
+net (fo=5)                              0.100          0.209          net: T_INR_CNT[0],  ../../uisrc/01_rtl/key_top.v(41)
+                                                                      pin: T_INR_CNT_reg[0]_syn_4.d[0]
+LUT1 (reg)          x031y027z0          0.216    f     0.425       1  net: T_INR_CNT[0],  ../../uisrc/01_rtl/key_top.v(41)
+--------------------------------------------------------------------  ---------------
+Arrival                                                0.425               
+
+source latency                          0.000          0.000               
+port                P61                 0.000          0.000          pin: I_sysclk
+hierarchy                               0.000          0.000          pin: I_sysclk_syn_2.ipad
+PAD                 x014y000            0.000          0.000          pin: I_sysclk_syn_2.di
+net (fo=22)                             0.000          0.000          net: I_sysclk_dup_1,  ../../uisrc/01_rtl/key_top.v(35)
+                                                                      pin: T_INR_CNT_reg[0]_syn_4.clk
+capture edge                            0.000    r     0.000               
+--------------------------------------------------------------------  ---------------
+hold                                    0.061          0.061               
+clock uncertainty                       0.000          0.061               
+clock pessimism                         0.000          0.061               
+--------------------------------------------------------------------  ---------------
+Required                                               0.061               
+--------------------------------------------------------------------  ---------------
+Slack                                                  0.364               
+
+Slack               : 0.389ns
+Begin Point         : LED_r_reg[3]_syn_7.clk (rising edge triggered by clock I_sysclk  { rise@0.000000ns  fall@20.000000ns  period=40.000000 })
+End Point           : LED_r_reg[3]_syn_7.c[0] (rising edge triggered by clock I_sysclk  { rise@0.000000ns  fall@20.000000ns  period=40.000000 })
+Check Type          : hold
+Process             : fast
+Budget              : 0.000ns { I_sysclk rising@0.000ns - I_sysclk rising@0.000ns }
+Data Path Delay     : 0.450ns (cell 0.350ns (77%), net 0.100ns (23%))
+Clock Skew          : 0.000ns
+Logic Level         : 1 ( LUT3=1 )
+Max Fanout          : 3
+Clock Uncertainty   : 0.000ns (sdc uncertainty: 0.000ns, default uncertainty: 0.000ns)
+
+Delay Type          Location             Incr           Path   Level  Netlist Info
+--------------------------------------------------------------------  ---------------
+source latency                          0.000          0.000               
+port                P61                 0.000          0.000          pin: I_sysclk
+hierarchy                               0.000          0.000          pin: I_sysclk_syn_2.ipad
+PAD                 x014y000            0.000          0.000          pin: I_sysclk_syn_2.di
+net (fo=22)                             0.000          0.000          net: I_sysclk_dup_1,  ../../uisrc/01_rtl/key_top.v(35)
+                                                                      pin: LED_r_reg[3]_syn_7.clk
+launch edge                             0.000    r     0.000               
+--------------------------------------------------------------------  ---------------
+clk2q               x038y027z0          0.109    f     0.109          pin: LED_r_reg[3]_syn_7.q[0]
+net (fo=3)                              0.100          0.209          net: O_LED[3]_dup_5,  ../../uisrc/01_rtl/key_top.v(37)
+                                                                      pin: LED_r_reg[3]_syn_7.c[0]
+LUT3 (reg)          x038y027z0          0.241    f     0.450       1  net: O_LED[3]_dup_5,  ../../uisrc/01_rtl/key_top.v(37)
+--------------------------------------------------------------------  ---------------
+Arrival                                                0.450               
+
+source latency                          0.000          0.000               
+port                P61                 0.000          0.000          pin: I_sysclk
+hierarchy                               0.000          0.000          pin: I_sysclk_syn_2.ipad
+PAD                 x014y000            0.000          0.000          pin: I_sysclk_syn_2.di
+net (fo=22)                             0.000          0.000          net: I_sysclk_dup_1,  ../../uisrc/01_rtl/key_top.v(35)
+                                                                      pin: LED_r_reg[3]_syn_7.clk
+capture edge                            0.000    r     0.000               
+--------------------------------------------------------------------  ---------------
+hold                                    0.061          0.061               
+clock uncertainty                       0.000          0.061               
+clock pessimism                         0.000          0.061               
+--------------------------------------------------------------------  ---------------
+Required                                               0.061               
+--------------------------------------------------------------------  ---------------
+Slack                                                  0.389               
+
+Slack               : 0.412ns
+Begin Point         : LED_r_reg[3]_syn_7.clk (rising edge triggered by clock I_sysclk  { rise@0.000000ns  fall@20.000000ns  period=40.000000 })
+End Point           : O_LED[2]_syn_4.do[0] (rising edge triggered by clock I_sysclk  { rise@0.000000ns  fall@20.000000ns  period=40.000000 })
+Check Type          : hold
+Process             : fast
+Budget              : 0.000ns { I_sysclk rising@0.000ns - I_sysclk rising@0.000ns }
+Data Path Delay     : 0.409ns (cell 0.109ns (26%), net 0.300ns (74%))
+Clock Skew          : 0.000ns
+Logic Level         : 0
+Max Fanout          : 3
+Clock Uncertainty   : 0.000ns (sdc uncertainty: 0.000ns, default uncertainty: 0.000ns)
+
+Delay Type          Location             Incr           Path   Level  Netlist Info
+--------------------------------------------------------------------  ---------------
+source latency                          0.000          0.000               
+port                P61                 0.000          0.000          pin: I_sysclk
+hierarchy                               0.000          0.000          pin: I_sysclk_syn_2.ipad
+PAD                 x014y000            0.000          0.000          pin: I_sysclk_syn_2.di
+net (fo=22)                             0.000          0.000          net: I_sysclk_dup_1,  ../../uisrc/01_rtl/key_top.v(35)
+                                                                      pin: LED_r_reg[3]_syn_7.clk
+launch edge                             0.000    r     0.000               
+--------------------------------------------------------------------  ---------------
+clk2q               x038y027z0          0.109    f     0.109          pin: LED_r_reg[3]_syn_7.q[0]
+net (fo=3)                              0.300          0.409          net: O_LED[3]_dup_5,  ../../uisrc/01_rtl/key_top.v(37)
+                                                                      pin: O_LED[2]_syn_4.do[0]
+PAD (reg)           x040y029            0.000    f     0.409          net: O_LED[2],  ../../uisrc/01_rtl/key_top.v(37)
+--------------------------------------------------------------------  ---------------
+Arrival                                                0.409               
+
+source latency                          0.000          0.000               
+port                P61                 0.000          0.000          pin: I_sysclk
+hierarchy                               0.000          0.000          pin: I_sysclk_syn_2.ipad
+PAD                 x014y000            0.000          0.000          pin: I_sysclk_syn_2.di
+net (fo=22)                             0.000          0.000          net: I_sysclk_dup_1,  ../../uisrc/01_rtl/key_top.v(35)
+                                                                      pin: O_LED[2]_syn_4.osclk
+capture edge                            0.000    r     0.000               
+--------------------------------------------------------------------  ---------------
+hold                                   -0.003         -0.003               
+clock uncertainty                       0.000         -0.003               
+clock pessimism                         0.000         -0.003               
+--------------------------------------------------------------------  ---------------
+Required                                              -0.003               
+--------------------------------------------------------------------  ---------------
+Slack                                                  0.412               
+
+Slack               : 0.412ns
+Begin Point         : LED_r_reg[0]_syn_7.clk (rising edge triggered by clock I_sysclk  { rise@0.000000ns  fall@20.000000ns  period=40.000000 })
+End Point           : O_LED[1]_syn_4.do[0] (rising edge triggered by clock I_sysclk  { rise@0.000000ns  fall@20.000000ns  period=40.000000 })
+Check Type          : hold
+Process             : fast
+Budget              : 0.000ns { I_sysclk rising@0.000ns - I_sysclk rising@0.000ns }
+Data Path Delay     : 0.409ns (cell 0.109ns (26%), net 0.300ns (74%))
+Clock Skew          : 0.000ns
+Logic Level         : 0
+Max Fanout          : 3
+Clock Uncertainty   : 0.000ns (sdc uncertainty: 0.000ns, default uncertainty: 0.000ns)
+
+Delay Type          Location             Incr           Path   Level  Netlist Info
+--------------------------------------------------------------------  ---------------
+source latency                          0.000          0.000               
+port                P61                 0.000          0.000          pin: I_sysclk
+hierarchy                               0.000          0.000          pin: I_sysclk_syn_2.ipad
+PAD                 x014y000            0.000          0.000          pin: I_sysclk_syn_2.di
+net (fo=22)                             0.000          0.000          net: I_sysclk_dup_1,  ../../uisrc/01_rtl/key_top.v(35)
+                                                                      pin: LED_r_reg[0]_syn_7.clk
+launch edge                             0.000    r     0.000               
+--------------------------------------------------------------------  ---------------
+clk2q               x038y022z3          0.109    f     0.109          pin: LED_r_reg[0]_syn_7.q[0]
+net (fo=3)                              0.300          0.409          net: O_LED[2]_dup_3,  ../../uisrc/01_rtl/key_top.v(37)
+                                                                      pin: O_LED[1]_syn_4.do[0]
+PAD (reg)           x040y020            0.000    f     0.409          net: O_LED[1],  ../../uisrc/01_rtl/key_top.v(37)
+--------------------------------------------------------------------  ---------------
+Arrival                                                0.409               
+
+source latency                          0.000          0.000               
+port                P61                 0.000          0.000          pin: I_sysclk
+hierarchy                               0.000          0.000          pin: I_sysclk_syn_2.ipad
+PAD                 x014y000            0.000          0.000          pin: I_sysclk_syn_2.di
+net (fo=22)                             0.000          0.000          net: I_sysclk_dup_1,  ../../uisrc/01_rtl/key_top.v(35)
+                                                                      pin: O_LED[1]_syn_4.osclk
+capture edge                            0.000    r     0.000               
+--------------------------------------------------------------------  ---------------
+hold                                   -0.003         -0.003               
+clock uncertainty                       0.000         -0.003               
+clock pessimism                         0.000         -0.003               
+--------------------------------------------------------------------  ---------------
+Required                                              -0.003               
+--------------------------------------------------------------------  ---------------
+Slack                                                  0.412               
+
+Slack               : 0.553ns
+Begin Point         : LED_r_reg[0]_syn_7.clk (rising edge triggered by clock I_sysclk  { rise@0.000000ns  fall@20.000000ns  period=40.000000 })
+End Point           : LED_r_reg[0]_syn_7.b[0] (rising edge triggered by clock I_sysclk  { rise@0.000000ns  fall@20.000000ns  period=40.000000 })
+Check Type          : hold
+Process             : fast
+Budget              : 0.000ns { I_sysclk rising@0.000ns - I_sysclk rising@0.000ns }
+Data Path Delay     : 0.614ns (cell 0.514ns (83%), net 0.100ns (17%))
+Clock Skew          : 0.000ns
+Logic Level         : 1 ( LUT3=1 )
+Max Fanout          : 3
+Clock Uncertainty   : 0.000ns (sdc uncertainty: 0.000ns, default uncertainty: 0.000ns)
+
+Delay Type          Location             Incr           Path   Level  Netlist Info
+--------------------------------------------------------------------  ---------------
+source latency                          0.000          0.000               
+port                P61                 0.000          0.000          pin: I_sysclk
+hierarchy                               0.000          0.000          pin: I_sysclk_syn_2.ipad
+PAD                 x014y000            0.000          0.000          pin: I_sysclk_syn_2.di
+net (fo=22)                             0.000          0.000          net: I_sysclk_dup_1,  ../../uisrc/01_rtl/key_top.v(35)
+                                                                      pin: LED_r_reg[0]_syn_7.clk
+launch edge                             0.000    r     0.000               
+--------------------------------------------------------------------  ---------------
+clk2q               x038y022z3          0.109    f     0.109          pin: LED_r_reg[0]_syn_7.q[0]
+net (fo=3)                              0.100          0.209          net: O_LED[2]_dup_3,  ../../uisrc/01_rtl/key_top.v(37)
+                                                                      pin: LED_r_reg[0]_syn_7.b[0]
+LUT3 (reg)          x038y022z3          0.405    r     0.614       1  net: O_LED[2]_dup_3,  ../../uisrc/01_rtl/key_top.v(37)
+--------------------------------------------------------------------  ---------------
+Arrival                                                0.614               
+
+source latency                          0.000          0.000               
+port                P61                 0.000          0.000          pin: I_sysclk
+hierarchy                               0.000          0.000          pin: I_sysclk_syn_2.ipad
+PAD                 x014y000            0.000          0.000          pin: I_sysclk_syn_2.di
+net (fo=22)                             0.000          0.000          net: I_sysclk_dup_1,  ../../uisrc/01_rtl/key_top.v(35)
+                                                                      pin: LED_r_reg[0]_syn_7.clk
+capture edge                            0.000    r     0.000               
+--------------------------------------------------------------------  ---------------
+hold                                    0.061          0.061               
+clock uncertainty                       0.000          0.061               
+clock pessimism                         0.000          0.061               
+--------------------------------------------------------------------  ---------------
+Required                                               0.061               
+--------------------------------------------------------------------  ---------------
+Slack                                                  0.553               
+
+Slack               : 0.553ns
+Begin Point         : LED_r_reg[0]_syn_7.clk (rising edge triggered by clock I_sysclk  { rise@0.000000ns  fall@20.000000ns  period=40.000000 })
+End Point           : LED_r_reg[0]_syn_7.b[1] (rising edge triggered by clock I_sysclk  { rise@0.000000ns  fall@20.000000ns  period=40.000000 })
+Check Type          : hold
+Process             : fast
+Budget              : 0.000ns { I_sysclk rising@0.000ns - I_sysclk rising@0.000ns }
+Data Path Delay     : 0.614ns (cell 0.514ns (83%), net 0.100ns (17%))
+Clock Skew          : 0.000ns
+Logic Level         : 1 ( LUT3=1 )
+Max Fanout          : 3
+Clock Uncertainty   : 0.000ns (sdc uncertainty: 0.000ns, default uncertainty: 0.000ns)
+
+Delay Type          Location             Incr           Path   Level  Netlist Info
+--------------------------------------------------------------------  ---------------
+source latency                          0.000          0.000               
+port                P61                 0.000          0.000          pin: I_sysclk
+hierarchy                               0.000          0.000          pin: I_sysclk_syn_2.ipad
+PAD                 x014y000            0.000          0.000          pin: I_sysclk_syn_2.di
+net (fo=22)                             0.000          0.000          net: I_sysclk_dup_1,  ../../uisrc/01_rtl/key_top.v(35)
+                                                                      pin: LED_r_reg[0]_syn_7.clk
+launch edge                             0.000    r     0.000               
+--------------------------------------------------------------------  ---------------
+clk2q               x038y022z3          0.109    f     0.109          pin: LED_r_reg[0]_syn_7.q[1]
+net (fo=3)                              0.100          0.209          net: O_LED[0]_dup_5,  ../../uisrc/01_rtl/key_top.v(37)
+                                                                      pin: LED_r_reg[0]_syn_7.b[1]
+LUT3 (reg)          x038y022z3          0.405    r     0.614       1  net: O_LED[0]_dup_5,  ../../uisrc/01_rtl/key_top.v(37)
+--------------------------------------------------------------------  ---------------
+Arrival                                                0.614               
+
+source latency                          0.000          0.000               
+port                P61                 0.000          0.000          pin: I_sysclk
+hierarchy                               0.000          0.000          pin: I_sysclk_syn_2.ipad
+PAD                 x014y000            0.000          0.000          pin: I_sysclk_syn_2.di
+net (fo=22)                             0.000          0.000          net: I_sysclk_dup_1,  ../../uisrc/01_rtl/key_top.v(35)
+                                                                      pin: LED_r_reg[0]_syn_7.clk
+capture edge                            0.000    r     0.000               
+--------------------------------------------------------------------  ---------------
+hold                                    0.061          0.061               
+clock uncertainty                       0.000          0.061               
+clock pessimism                         0.000          0.061               
+--------------------------------------------------------------------  ---------------
+Required                                               0.061               
+--------------------------------------------------------------------  ---------------
+Slack                                                  0.553               
+
+Slack               : 0.553ns
+Begin Point         : LED_r_reg[1]_syn_25.clk (rising edge triggered by clock I_sysclk  { rise@0.000000ns  fall@20.000000ns  period=40.000000 })
+End Point           : LED_r_reg[1]_syn_25.b[0] (rising edge triggered by clock I_sysclk  { rise@0.000000ns  fall@20.000000ns  period=40.000000 })
+Check Type          : hold
+Process             : fast
+Budget              : 0.000ns { I_sysclk rising@0.000ns - I_sysclk rising@0.000ns }
+Data Path Delay     : 0.614ns (cell 0.514ns (83%), net 0.100ns (17%))
+Clock Skew          : 0.000ns
+Logic Level         : 1 ( LUT3=1 )
+Max Fanout          : 3
+Clock Uncertainty   : 0.000ns (sdc uncertainty: 0.000ns, default uncertainty: 0.000ns)
+
+Delay Type          Location             Incr           Path   Level  Netlist Info
+--------------------------------------------------------------------  ---------------
+source latency                          0.000          0.000               
+port                P61                 0.000          0.000          pin: I_sysclk
+hierarchy                               0.000          0.000          pin: I_sysclk_syn_2.ipad
+PAD                 x014y000            0.000          0.000          pin: I_sysclk_syn_2.di
+net (fo=22)                             0.000          0.000          net: I_sysclk_dup_1,  ../../uisrc/01_rtl/key_top.v(35)
+                                                                      pin: LED_r_reg[1]_syn_25.clk
+launch edge                             0.000    r     0.000               
+--------------------------------------------------------------------  ---------------
+clk2q               x038y018z3          0.109    f     0.109          pin: LED_r_reg[1]_syn_25.q[0]
+net (fo=3)                              0.100          0.209          net: O_LED[1]_dup_3,  ../../uisrc/01_rtl/key_top.v(37)
+                                                                      pin: LED_r_reg[1]_syn_25.b[0]
+LUT3 (reg)          x038y018z3          0.405    r     0.614       1  net: O_LED[1]_dup_3,  ../../uisrc/01_rtl/key_top.v(37)
+--------------------------------------------------------------------  ---------------
+Arrival                                                0.614               
+
+source latency                          0.000          0.000               
+port                P61                 0.000          0.000          pin: I_sysclk
+hierarchy                               0.000          0.000          pin: I_sysclk_syn_2.ipad
+PAD                 x014y000            0.000          0.000          pin: I_sysclk_syn_2.di
+net (fo=22)                             0.000          0.000          net: I_sysclk_dup_1,  ../../uisrc/01_rtl/key_top.v(35)
+                                                                      pin: LED_r_reg[1]_syn_25.clk
+capture edge                            0.000    r     0.000               
+--------------------------------------------------------------------  ---------------
+hold                                    0.061          0.061               
+clock uncertainty                       0.000          0.061               
+clock pessimism                         0.000          0.061               
+--------------------------------------------------------------------  ---------------
+Required                                               0.061               
+--------------------------------------------------------------------  ---------------
+Slack                                                  0.553               
+
+Slack               : 0.643ns
+Begin Point         : T_INR_CNT_reg[0]_syn_4.clk (rising edge triggered by clock I_sysclk  { rise@0.000000ns  fall@20.000000ns  period=40.000000 })
+End Point           : T_INR_CNT_reg[6]_syn_4.d[0] (rising edge triggered by clock I_sysclk  { rise@0.000000ns  fall@20.000000ns  period=40.000000 })
+Check Type          : hold
+Process             : fast
+Budget              : 0.000ns { I_sysclk rising@0.000ns - I_sysclk rising@0.000ns }
+Data Path Delay     : 0.704ns (cell 0.504ns (71%), net 0.200ns (29%))
+Clock Skew          : 0.000ns
+Logic Level         : 2 ( LUT5=1  LUT2=1 )
+Max Fanout          : 12
+Clock Uncertainty   : 0.000ns (sdc uncertainty: 0.000ns, default uncertainty: 0.000ns)
+
+Delay Type          Location             Incr           Path   Level  Netlist Info
+--------------------------------------------------------------------  ---------------
+source latency                          0.000          0.000               
+port                P61                 0.000          0.000          pin: I_sysclk
+hierarchy                               0.000          0.000          pin: I_sysclk_syn_2.ipad
+PAD                 x014y000            0.000          0.000          pin: I_sysclk_syn_2.di
+net (fo=22)                             0.000          0.000          net: I_sysclk_dup_1,  ../../uisrc/01_rtl/key_top.v(35)
+                                                                      pin: T_INR_CNT_reg[0]_syn_4.clk
+launch edge                             0.000    r     0.000               
+--------------------------------------------------------------------  ---------------
+clk2q               x031y027z0          0.109    f     0.109          pin: T_INR_CNT_reg[0]_syn_4.q[0]
+net (fo=5)                              0.100          0.209          net: T_INR_CNT[0],  ../../uisrc/01_rtl/key_top.v(41)
+                                                                      pin: T_INR_CNT_reg[7]_syn_4.d[0]
+LUT5                x031y027z3          0.179    f     0.388       1  pin: T_INR_CNT_reg[7]_syn_4.f[0]
+net (fo=12)                             0.100          0.488          net: T_INR_CNT_b_n,  NOFILE(0)
+                                                                      pin: T_INR_CNT_reg[6]_syn_4.d[0]
+LUT2 (reg)          x031y027z1          0.216    f     0.704       2  net: T_INR_CNT[6],  ../../uisrc/01_rtl/key_top.v(41)
+--------------------------------------------------------------------  ---------------
+Arrival                                                0.704               
+
+source latency                          0.000          0.000               
+port                P61                 0.000          0.000          pin: I_sysclk
+hierarchy                               0.000          0.000          pin: I_sysclk_syn_2.ipad
+PAD                 x014y000            0.000          0.000          pin: I_sysclk_syn_2.di
+net (fo=22)                             0.000          0.000          net: I_sysclk_dup_1,  ../../uisrc/01_rtl/key_top.v(35)
+                                                                      pin: T_INR_CNT_reg[6]_syn_4.clk
+capture edge                            0.000    r     0.000               
+--------------------------------------------------------------------  ---------------
+hold                                    0.061          0.061               
+clock uncertainty                       0.000          0.061               
+clock pessimism                         0.000          0.061               
+--------------------------------------------------------------------  ---------------
+Required                                               0.061               
+--------------------------------------------------------------------  ---------------
+Slack                                                  0.643               
+
+Slack               : 0.693ns
+Begin Point         : T_INR_CNT_reg[0]_syn_4.clk (rising edge triggered by clock I_sysclk  { rise@0.000000ns  fall@20.000000ns  period=40.000000 })
+End Point           : T_INR_CNT_reg[12]_syn_4.d[0] (rising edge triggered by clock I_sysclk  { rise@0.000000ns  fall@20.000000ns  period=40.000000 })
+Check Type          : hold
+Process             : fast
+Budget              : 0.000ns { I_sysclk rising@0.000ns - I_sysclk rising@0.000ns }
+Data Path Delay     : 0.754ns (cell 0.504ns (66%), net 0.250ns (34%))
+Clock Skew          : 0.000ns
+Logic Level         : 2 ( LUT5=1  LUT2=1 )
+Max Fanout          : 12
+Clock Uncertainty   : 0.000ns (sdc uncertainty: 0.000ns, default uncertainty: 0.000ns)
+
+Delay Type          Location             Incr           Path   Level  Netlist Info
+--------------------------------------------------------------------  ---------------
+source latency                          0.000          0.000               
+port                P61                 0.000          0.000          pin: I_sysclk
+hierarchy                               0.000          0.000          pin: I_sysclk_syn_2.ipad
+PAD                 x014y000            0.000          0.000          pin: I_sysclk_syn_2.di
+net (fo=22)                             0.000          0.000          net: I_sysclk_dup_1,  ../../uisrc/01_rtl/key_top.v(35)
+                                                                      pin: T_INR_CNT_reg[0]_syn_4.clk
+launch edge                             0.000    r     0.000               
+--------------------------------------------------------------------  ---------------
+clk2q               x031y027z0          0.109    f     0.109          pin: T_INR_CNT_reg[0]_syn_4.q[0]
+net (fo=5)                              0.100          0.209          net: T_INR_CNT[0],  ../../uisrc/01_rtl/key_top.v(41)
+                                                                      pin: T_INR_CNT_reg[7]_syn_4.d[0]
+LUT5                x031y027z3          0.179    f     0.388       1  pin: T_INR_CNT_reg[7]_syn_4.f[0]
+net (fo=12)                             0.150          0.538          net: T_INR_CNT_b_n,  NOFILE(0)
+                                                                      pin: T_INR_CNT_reg[12]_syn_4.d[0]
+LUT2 (reg)          x030y027z0          0.216    f     0.754       2  net: T_INR_CNT[13],  ../../uisrc/01_rtl/key_top.v(41)
+--------------------------------------------------------------------  ---------------
+Arrival                                                0.754               
+
+source latency                          0.000          0.000               
+port                P61                 0.000          0.000          pin: I_sysclk
+hierarchy                               0.000          0.000          pin: I_sysclk_syn_2.ipad
+PAD                 x014y000            0.000          0.000          pin: I_sysclk_syn_2.di
+net (fo=22)                             0.000          0.000          net: I_sysclk_dup_1,  ../../uisrc/01_rtl/key_top.v(35)
+                                                                      pin: T_INR_CNT_reg[12]_syn_4.clk
+capture edge                            0.000    r     0.000               
+--------------------------------------------------------------------  ---------------
+hold                                    0.061          0.061               
+clock uncertainty                       0.000          0.061               
+clock pessimism                         0.000          0.061               
+--------------------------------------------------------------------  ---------------
+Required                                               0.061               
+--------------------------------------------------------------------  ---------------
+Slack                                                  0.693               
+
+Slack               : 0.693ns
+Begin Point         : T_INR_CNT_reg[0]_syn_4.clk (rising edge triggered by clock I_sysclk  { rise@0.000000ns  fall@20.000000ns  period=40.000000 })
+End Point           : T_INR_CNT_reg[12]_syn_4.d[1] (rising edge triggered by clock I_sysclk  { rise@0.000000ns  fall@20.000000ns  period=40.000000 })
+Check Type          : hold
+Process             : fast
+Budget              : 0.000ns { I_sysclk rising@0.000ns - I_sysclk rising@0.000ns }
+Data Path Delay     : 0.754ns (cell 0.504ns (66%), net 0.250ns (34%))
+Clock Skew          : 0.000ns
+Logic Level         : 2 ( LUT5=1  LUT2=1 )
+Max Fanout          : 12
+Clock Uncertainty   : 0.000ns (sdc uncertainty: 0.000ns, default uncertainty: 0.000ns)
+
+Delay Type          Location             Incr           Path   Level  Netlist Info
+--------------------------------------------------------------------  ---------------
+source latency                          0.000          0.000               
+port                P61                 0.000          0.000          pin: I_sysclk
+hierarchy                               0.000          0.000          pin: I_sysclk_syn_2.ipad
+PAD                 x014y000            0.000          0.000          pin: I_sysclk_syn_2.di
+net (fo=22)                             0.000          0.000          net: I_sysclk_dup_1,  ../../uisrc/01_rtl/key_top.v(35)
+                                                                      pin: T_INR_CNT_reg[0]_syn_4.clk
+launch edge                             0.000    r     0.000               
+--------------------------------------------------------------------  ---------------
+clk2q               x031y027z0          0.109    f     0.109          pin: T_INR_CNT_reg[0]_syn_4.q[0]
+net (fo=5)                              0.100          0.209          net: T_INR_CNT[0],  ../../uisrc/01_rtl/key_top.v(41)
+                                                                      pin: T_INR_CNT_reg[7]_syn_4.d[0]
+LUT5                x031y027z3          0.179    f     0.388       1  pin: T_INR_CNT_reg[7]_syn_4.f[0]
+net (fo=12)                             0.150          0.538          net: T_INR_CNT_b_n,  NOFILE(0)
+                                                                      pin: T_INR_CNT_reg[12]_syn_4.d[1]
+LUT2 (reg)          x030y027z0          0.216    f     0.754       2  net: T_INR_CNT[12],  ../../uisrc/01_rtl/key_top.v(41)
+--------------------------------------------------------------------  ---------------
+Arrival                                                0.754               
+
+source latency                          0.000          0.000               
+port                P61                 0.000          0.000          pin: I_sysclk
+hierarchy                               0.000          0.000          pin: I_sysclk_syn_2.ipad
+PAD                 x014y000            0.000          0.000          pin: I_sysclk_syn_2.di
+net (fo=22)                             0.000          0.000          net: I_sysclk_dup_1,  ../../uisrc/01_rtl/key_top.v(35)
+                                                                      pin: T_INR_CNT_reg[12]_syn_4.clk
+capture edge                            0.000    r     0.000               
+--------------------------------------------------------------------  ---------------
+hold                                    0.061          0.061               
+clock uncertainty                       0.000          0.061               
+clock pessimism                         0.000          0.061               
+--------------------------------------------------------------------  ---------------
+Required                                               0.061               
+--------------------------------------------------------------------  ---------------
+Slack                                                  0.693               
+
+
+Inter clock domain timing
+--------------------------------------------------
+
+IP timing
+--------------------------------------------------

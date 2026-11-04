@@ -1,0 +1,69 @@
+standard
+***Report Model: run_led Device: EG4D20EG176***
+
+IO Statistics
+#IO                         6   out of    130    4.62%
+  #input                    2
+  #output                   4
+  #inout                    0
+
+Utilization Statistics
+#lut                       45   out of  19600    0.23%
+#reg                       29   out of  19600    0.15%
+#le                        46
+  #lut only                17   out of     46   36.96%
+  #reg only                 1   out of     46    2.17%
+  #lut&reg                 28   out of     46   60.87%
+#bram                       0   out of     64    0.00%
+  #bram9k                   0
+  #fifo9k                   0
+#bram32k                    0   out of     16    0.00%
+#dsp                        0   out of     29    0.00%
+#pad                        6   out of    130    4.62%
+  #ireg                     0
+  #oreg                     4
+  #treg                     0
+#pll                        0   out of      4    0.00%
+#gclk                       0   out of     16    0.00%
+
+
+Detailed IO Report
+
+    Name      Direction    Location    IOStandard    IOType    DriveStrength    PullType    PackReg  
+   I_RSTn       INPUT        P133       LVCMOS33      PAD           N/A          PULLUP      NONE    
+  I_sysclk      INPUT        P61        LVCMOS33      PAD           N/A          PULLUP      NONE    
+  O_LED[3]     OUTPUT        P112       LVCMOS33      PAD            8            NONE       OREG    
+  O_LED[2]     OUTPUT        P109       LVCMOS33      PAD            8            NONE       OREG    
+  O_LED[1]     OUTPUT        P104       LVCMOS33      PAD            8            NONE       OREG    
+  O_LED[0]     OUTPUT        P91        LVCMOS33      PAD            8            NONE       OREG    
+
+Report Clock Domain Luts:
+
+---------------------------------------------------------------------------------------------------------------
+  Index   |  Name      |  Frequency   |  LUT As Logic   |  LUT As Shifter   |  LUT As Dram   |  BRAM   |  DSP
+---------------------------------------------------------------------------------------------------------------
+  #1      |  I_sysclk  |  25MHz       |  22             |  0                |  0             |  0      |  0
+---------------------------------------------------------------------------------------------------------------
+
+Clock Resource Statistics
+Index     ClockNet          Type               DriverType         Driver               Fanout
+#1        I_sysclk_dup_1    Global             io                 I_sysclk_syn_2.di    22
+
+Report Hierarchy Area:
++------------------------------------------------------------------------+
+|Instance |Module  |le      |lut     |ripple  |seq     |bram    |dsp     |
++------------------------------------------------------------------------+
+|top      |run_led |46      |38      |7       |33      |0       |0       |
++------------------------------------------------------------------------+
+
+
+DataNet Average Fanout:
+
+   Index     Fanout    Nets  
+    #1         1        35   
+    #2         2        12   
+    #3         3        19   
+    #4         4        2    
+    #5        5-10      2    
+    #6       11-50      2    
+  Average     2.38           

@@ -1,0 +1,73 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dE:/MLK_S200/07_key/uisrc/02_sim
+vkey
+Z1 !s110 1724833922
+!i10b 1
+!s100 X[FAbJMUVd`<]fdm5]lVQ2
+IMbY0YXR[S:oL9IZ0Vi`YA3
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1723775699
+8../01_rtl/key.v
+F../01_rtl/key.v
+L0 32
+Z3 OL;L;10.6d;65
+r1
+!s85 0
+31
+Z4 !s108 1724833922.000000
+!s107 ../02_sim/tb_key.v|../01_rtl/key_top.v|../01_rtl/key.v|
+Z5 !s90 -reportprogress|300|-timescale|1ps/1ps|-f|compile.f|
+!i113 1
+Z6 o-timescale 1ps/1ps -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z7 tCvgOpt 0
+vkey_top
+R1
+!i10b 1
+!s100 k^N2`Fm90Lh;?[0a@8UST3
+I84LD_CcYO_[Y3^B@[fHCz0
+R2
+R0
+w1723776039
+8../01_rtl/key_top.v
+F../01_rtl/key_top.v
+Z8 L0 31
+R3
+r1
+!s85 0
+31
+R4
+Z9 !s107 ../02_sim/tb_key.v|../01_rtl/key_top.v|../01_rtl/key.v|
+R5
+!i113 1
+R6
+R7
+vtb_key
+R1
+!i10b 1
+!s100 Mdod^@XG5XYan=Ba6dNmI3
+IFWAcFk5l6lY=NAcg=aSlX1
+R2
+R0
+w1723776290
+8../02_sim/tb_key.v
+F../02_sim/tb_key.v
+R8
+R3
+r1
+!s85 0
+31
+R4
+R9
+R5
+!i113 1
+R6
+R7
