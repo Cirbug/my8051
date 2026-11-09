@@ -1,0 +1,482 @@
+Analysis & Elaboration report for 8051_EP4CE
+Mon Nov  9 21:34:56 2026
+Quartus Prime Version 25.1std.0 Build 1129 10/21/2025 SC Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Elaboration Summary
+  3. Parallel Compilation
+  4. Parameter Settings for User Entity Instance: oc8051_ram_top:oc8051_ram_top1
+  5. Parameter Settings for User Entity Instance: oc8051_ram_top:oc8051_ram_top1|oc8051_ram_256x8_two_bist:oc8051_idata|generic_dpram:oc8051_ram1
+  6. Analysis & Elaboration Settings
+  7. Port Connectivity Checks: "oc8051_memory_interface:oc8051_memory_interface1"
+  8. Port Connectivity Checks: "oc8051_ram_top:oc8051_ram_top1|oc8051_ram_256x8_two_bist:oc8051_idata|generic_dpram:oc8051_ram1"
+  9. Port Connectivity Checks: "oc8051_ram_top:oc8051_ram_top1|oc8051_ram_256x8_two_bist:oc8051_idata"
+ 10. Analysis & Elaboration Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2025  Altera Corporation. All rights reserved.
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, the Altera Quartus Prime License Agreement,
+the Altera IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Altera and sold by Altera or its authorized distributors.  Please
+refer to the Altera Software License Subscription Agreements 
+on the Quartus Prime software download page.
+
+
+
++--------------------------------------------------------------------------------------+
+; Analysis & Elaboration Summary                                                       ;
++------------------------------------+-------------------------------------------------+
+; Analysis & Elaboration Status      ; Successful - Mon Nov  9 21:34:56 2026           ;
+; Quartus Prime Version              ; 25.1std.0 Build 1129 10/21/2025 SC Lite Edition ;
+; Revision Name                      ; 8051_EP4CE                                      ;
+; Top-level Entity Name              ; oc8051_top                                      ;
+; Family                             ; Cyclone IV E                                    ;
+; Total logic elements               ; N/A until Partition Merge                       ;
+;     Total combinational functions  ; N/A until Partition Merge                       ;
+;     Dedicated logic registers      ; N/A until Partition Merge                       ;
+; Total registers                    ; N/A until Partition Merge                       ;
+; Total pins                         ; N/A until Partition Merge                       ;
+; Total virtual pins                 ; N/A until Partition Merge                       ;
+; Total memory bits                  ; N/A until Partition Merge                       ;
+; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                       ;
+; Total PLLs                         ; N/A until Partition Merge                       ;
++------------------------------------+-------------------------------------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 32          ;
+; Maximum allowed            ; 16          ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
++----------------------------+-------------+
+
+
++-----------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: oc8051_ram_top:oc8051_ram_top1 ;
++----------------+-------+----------------------------------------------------+
+; Parameter Name ; Value ; Type                                               ;
++----------------+-------+----------------------------------------------------+
+; ram_aw         ; 8     ; Signed Integer                                     ;
++----------------+-------+----------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: oc8051_ram_top:oc8051_ram_top1|oc8051_ram_256x8_two_bist:oc8051_idata|generic_dpram:oc8051_ram1 ;
++----------------+-------+---------------------------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                                                ;
++----------------+-------+---------------------------------------------------------------------------------------------------------------------+
+; aw             ; 8     ; Signed Integer                                                                                                      ;
+; dw             ; 8     ; Signed Integer                                                                                                      ;
++----------------+-------+---------------------------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------------------+
+; Analysis & Elaboration Settings                                                                            ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                           ; Setting            ; Default Value      ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                           ; EP4CE10F17C8       ;                    ;
+; Top-level entity name                                            ; oc8051_top         ; 8051_EP4CE         ;
+; Family name                                                      ; Cyclone IV E       ; Cyclone V          ;
+; Use smart compilation                                            ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                      ; Off                ; Off                ;
+; Restructure Multiplexers                                         ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                              ; Off                ; Off                ;
+; Preserve fewer node names                                        ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                    ; Enable             ; Enable             ;
+; Verilog Version                                                  ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                     ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                         ; Auto               ; Auto               ;
+; Safe State Machine                                               ; Off                ; Off                ;
+; Extract Verilog State Machines                                   ; On                 ; On                 ;
+; Extract VHDL State Machines                                      ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                       ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                   ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                          ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                        ; On                 ; On                 ;
+; Parallel Synthesis                                               ; On                 ; On                 ;
+; DSP Block Balancing                                              ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                               ; On                 ; On                 ;
+; Power-Up Don't Care                                              ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                     ; Off                ; Off                ;
+; Remove Duplicate Registers                                       ; On                 ; On                 ;
+; Ignore CARRY Buffers                                             ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                           ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                            ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                        ; Off                ; Off                ;
+; Ignore LCELL Buffers                                             ; Off                ; Off                ;
+; Ignore SOFT Buffers                                              ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                   ; Off                ; Off                ;
+; Optimization Technique                                           ; Balanced           ; Balanced           ;
+; Carry Chain Length                                               ; 70                 ; 70                 ;
+; Auto Carry Chains                                                ; On                 ; On                 ;
+; Auto Open-Drain Pins                                             ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                            ; Off                ; Off                ;
+; Auto ROM Replacement                                             ; On                 ; On                 ;
+; Auto RAM Replacement                                             ; On                 ; On                 ;
+; Auto DSP Block Replacement                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                  ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                  ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                    ; On                 ; On                 ;
+; Strict RAM Replacement                                           ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                           ; Off                ; Off                ;
+; Auto RAM Block Balancing                                         ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                ; Off                ; Off                ;
+; Auto Resource Sharing                                            ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                    ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing              ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                ; Off                ; Off                ;
+; Timing-Driven Synthesis                                          ; On                 ; On                 ;
+; Report Parameter Settings                                        ; On                 ; On                 ;
+; Report Source Assignments                                        ; On                 ; On                 ;
+; Report Connectivity Checks                                       ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                               ; Off                ; Off                ;
+; Synchronization Register Chain Length                            ; 2                  ; 2                  ;
+; Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                  ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report         ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report               ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report        ; 100                ; 100                ;
+; Clock MUX Protection                                             ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                      ; Off                ; Off                ;
+; Block Design Naming                                              ; Auto               ; Auto               ;
+; SDC constraint protection                                        ; Off                ; Off                ;
+; Synthesis Effort                                                 ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal     ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                             ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                               ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                      ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                           ; On                 ; On                 ;
++------------------------------------------------------------------+--------------------+--------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "oc8051_memory_interface:oc8051_memory_interface1"                                          ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port        ; Type   ; Severity ; Details                                                                             ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+; istb_o      ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; idat_onchip ; Input  ; Info     ; Stuck at GND                                                                        ;
+; rd_ind      ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; ea_int      ; Input  ; Info     ; Stuck at GND                                                                        ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "oc8051_ram_top:oc8051_ram_top1|oc8051_ram_256x8_two_bist:oc8051_idata|generic_dpram:oc8051_ram1" ;
++------+-------+----------+---------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                           ;
++------+-------+----------+---------------------------------------------------------------------------------------------------+
+; oe   ; Input ; Info     ; Stuck at VCC                                                                                      ;
++------+-------+----------+---------------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "oc8051_ram_top:oc8051_ram_top1|oc8051_ram_256x8_two_bist:oc8051_idata" ;
++-------+-------+----------+------------------------------------------------------------------------+
+; Port  ; Type  ; Severity ; Details                                                                ;
++-------+-------+----------+------------------------------------------------------------------------+
+; wr_en ; Input ; Info     ; Stuck at VCC                                                           ;
++-------+-------+----------+------------------------------------------------------------------------+
+
+
++---------------------------------+
+; Analysis & Elaboration Messages ;
++---------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Elaboration
+    Info: Version 25.1std.0 Build 1129 10/21/2025 SC Lite Edition
+    Info: Processing started: Mon Nov  9 21:34:47 2026
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off 8051_EP4CE -c 8051_EP4CE --analysis_and_elaboration
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 16 of the 32 processors detected
+Warning (10463): Verilog HDL Declaration warning at generic_dpram.v(123): "do" is SystemVerilog-2005 keyword File: D:/git/my8051/EP4CE/source/rtl/verilog/generic_dpram.v Line: 123
+Info (12021): Found 1 design units, including 1 entities, in source file source/rtl/verilog/generic_dpram.v
+    Info (12023): Found entity 1: generic_dpram File: D:/git/my8051/EP4CE/source/rtl/verilog/generic_dpram.v Line: 102
+Info (12021): Found 1 design units, including 1 entities, in source file source/rtl/verilog/oc8051_wb_iinterface.v
+    Info (12023): Found entity 1: oc8051_wb_iinterface File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_wb_iinterface.v Line: 70
+Info (12021): Found 1 design units, including 1 entities, in source file source/rtl/verilog/oc8051_uart.v
+    Info (12023): Found entity 1: oc8051_uart File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_uart.v Line: 73
+Info (12021): Found 1 design units, including 1 entities, in source file source/rtl/verilog/oc8051_top.v
+    Info (12023): Found entity 1: oc8051_top File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_top.v Line: 115
+Info (12021): Found 0 design units, including 0 entities, in source file source/rtl/verilog/oc8051_timescale.v
+Info (12021): Found 1 design units, including 1 entities, in source file source/rtl/verilog/oc8051_tc2.v
+    Info (12023): Found entity 1: oc8051_tc2 File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_tc2.v Line: 64
+Info (12021): Found 1 design units, including 1 entities, in source file source/rtl/verilog/oc8051_tc.v
+    Info (12023): Found entity 1: oc8051_tc File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_tc.v Line: 72
+Info (12021): Found 1 design units, including 1 entities, in source file source/rtl/verilog/oc8051_sp.v
+    Info (12023): Found entity 1: oc8051_sp File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_sp.v Line: 66
+Info (12021): Found 1 design units, including 1 entities, in source file source/rtl/verilog/oc8051_sfr.v
+    Info (12023): Found entity 1: oc8051_sfr File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_sfr.v Line: 98
+Info (12021): Found 1 design units, including 1 entities, in source file source/rtl/verilog/oc8051_ram_top.v
+    Info (12023): Found entity 1: oc8051_ram_top File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_ram_top.v Line: 77
+Info (12021): Found 1 design units, including 1 entities, in source file source/rtl/verilog/oc8051_ram_256x8_two_bist.v
+    Info (12023): Found entity 1: oc8051_ram_256x8_two_bist File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_ram_256x8_two_bist.v Line: 59
+Info (12021): Found 1 design units, including 1 entities, in source file source/rtl/verilog/oc8051_ram_64x32_dual_bist.v
+    Info (12023): Found entity 1: oc8051_ram_64x32_dual_bist File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_ram_64x32_dual_bist.v Line: 59
+Info (12021): Found 1 design units, including 1 entities, in source file source/rtl/verilog/oc8051_psw.v
+    Info (12023): Found entity 1: oc8051_psw File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_psw.v Line: 72
+Info (12021): Found 1 design units, including 1 entities, in source file source/rtl/verilog/oc8051_ports.v
+    Info (12023): Found entity 1: oc8051_ports File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_ports.v Line: 69
+Info (12021): Found 1 design units, including 1 entities, in source file source/rtl/verilog/oc8051_multiply.v
+    Info (12023): Found entity 1: oc8051_multiply File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_multiply.v Line: 65
+Info (12021): Found 1 design units, including 1 entities, in source file source/rtl/verilog/oc8051_memory_interface.v
+    Info (12023): Found entity 1: oc8051_memory_interface File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_memory_interface.v Line: 92
+Info (12021): Found 1 design units, including 1 entities, in source file source/rtl/verilog/oc8051_int.v
+    Info (12023): Found entity 1: oc8051_int File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_int.v Line: 75
+Info (12021): Found 1 design units, including 1 entities, in source file source/rtl/verilog/oc8051_indi_addr.v
+    Info (12023): Found entity 1: oc8051_indi_addr File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_indi_addr.v Line: 64
+Info (12021): Found 1 design units, including 1 entities, in source file source/rtl/verilog/oc8051_icache.v
+    Info (12023): Found entity 1: oc8051_icache File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_icache.v Line: 79
+Info (12021): Found 1 design units, including 1 entities, in source file source/rtl/verilog/oc8051_dptr.v
+    Info (12023): Found entity 1: oc8051_dptr File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_dptr.v Line: 62
+Info (12021): Found 1 design units, including 1 entities, in source file source/rtl/verilog/oc8051_divide.v
+    Info (12023): Found entity 1: oc8051_divide File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_divide.v Line: 57
+Info (12021): Found 0 design units, including 0 entities, in source file source/rtl/verilog/oc8051_defines.v
+Info (12021): Found 1 design units, including 1 entities, in source file source/rtl/verilog/oc8051_decoder.v
+    Info (12023): Found entity 1: oc8051_decoder File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_decoder.v Line: 90
+Info (12021): Found 1 design units, including 1 entities, in source file source/rtl/verilog/oc8051_cy_select.v
+    Info (12023): Found entity 1: oc8051_cy_select File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_cy_select.v Line: 62
+Info (12021): Found 1 design units, including 1 entities, in source file source/rtl/verilog/oc8051_comp.v
+    Info (12023): Found entity 1: oc8051_comp File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_comp.v Line: 66
+Info (12021): Found 1 design units, including 1 entities, in source file source/rtl/verilog/oc8051_cache_ram.v
+    Info (12023): Found entity 1: oc8051_cache_ram File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_cache_ram.v Line: 60
+Info (12021): Found 1 design units, including 1 entities, in source file source/rtl/verilog/oc8051_b_register.v
+    Info (12023): Found entity 1: oc8051_b_register File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_b_register.v Line: 65
+Info (12021): Found 1 design units, including 1 entities, in source file source/rtl/verilog/oc8051_alu_src_sel.v
+    Info (12023): Found entity 1: oc8051_alu_src_sel File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_alu_src_sel.v Line: 66
+Info (12021): Found 1 design units, including 1 entities, in source file source/rtl/verilog/oc8051_alu.v
+    Info (12023): Found entity 1: oc8051_alu File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_alu.v Line: 89
+Info (12021): Found 1 design units, including 1 entities, in source file source/rtl/verilog/oc8051_acc.v
+    Info (12023): Found entity 1: oc8051_acc File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_acc.v Line: 77
+Info (12127): Elaborating entity "oc8051_top" for the top level hierarchy
+Warning (10036): Verilog HDL or VHDL warning at oc8051_top.v(360): object "icyc_o" assigned a value but never read File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_top.v Line: 360
+Info (12128): Elaborating entity "oc8051_decoder" for hierarchy "oc8051_decoder:oc8051_decoder1" File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_top.v Line: 393
+Warning (10230): Verilog HDL assignment warning at oc8051_decoder.v(1196): truncated value with size 3 to match size of target (2) File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_decoder.v Line: 1196
+Warning (10230): Verilog HDL assignment warning at oc8051_decoder.v(1210): truncated value with size 3 to match size of target (2) File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_decoder.v Line: 1210
+Warning (10230): Verilog HDL assignment warning at oc8051_decoder.v(1219): truncated value with size 3 to match size of target (2) File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_decoder.v Line: 1219
+Warning (10230): Verilog HDL assignment warning at oc8051_decoder.v(1228): truncated value with size 3 to match size of target (2) File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_decoder.v Line: 1228
+Warning (10230): Verilog HDL assignment warning at oc8051_decoder.v(1237): truncated value with size 3 to match size of target (2) File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_decoder.v Line: 1237
+Warning (10230): Verilog HDL assignment warning at oc8051_decoder.v(1273): truncated value with size 3 to match size of target (2) File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_decoder.v Line: 1273
+Warning (10230): Verilog HDL assignment warning at oc8051_decoder.v(1282): truncated value with size 3 to match size of target (2) File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_decoder.v Line: 1282
+Warning (10230): Verilog HDL assignment warning at oc8051_decoder.v(1291): truncated value with size 3 to match size of target (2) File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_decoder.v Line: 1291
+Warning (10230): Verilog HDL assignment warning at oc8051_decoder.v(1306): truncated value with size 3 to match size of target (2) File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_decoder.v Line: 1306
+Warning (10230): Verilog HDL assignment warning at oc8051_decoder.v(1314): truncated value with size 3 to match size of target (2) File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_decoder.v Line: 1314
+Warning (10230): Verilog HDL assignment warning at oc8051_decoder.v(1322): truncated value with size 3 to match size of target (2) File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_decoder.v Line: 1322
+Warning (10230): Verilog HDL assignment warning at oc8051_decoder.v(1330): truncated value with size 3 to match size of target (2) File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_decoder.v Line: 1330
+Warning (10230): Verilog HDL assignment warning at oc8051_decoder.v(1338): truncated value with size 3 to match size of target (2) File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_decoder.v Line: 1338
+Warning (10230): Verilog HDL assignment warning at oc8051_decoder.v(1346): truncated value with size 3 to match size of target (2) File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_decoder.v Line: 1346
+Warning (10230): Verilog HDL assignment warning at oc8051_decoder.v(1361): truncated value with size 3 to match size of target (2) File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_decoder.v Line: 1361
+Warning (10230): Verilog HDL assignment warning at oc8051_decoder.v(1367): truncated value with size 3 to match size of target (2) File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_decoder.v Line: 1367
+Warning (10230): Verilog HDL assignment warning at oc8051_decoder.v(1373): truncated value with size 3 to match size of target (2) File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_decoder.v Line: 1373
+Warning (10230): Verilog HDL assignment warning at oc8051_decoder.v(1379): truncated value with size 3 to match size of target (2) File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_decoder.v Line: 1379
+Warning (10230): Verilog HDL assignment warning at oc8051_decoder.v(1385): truncated value with size 3 to match size of target (2) File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_decoder.v Line: 1385
+Warning (10230): Verilog HDL assignment warning at oc8051_decoder.v(1401): truncated value with size 3 to match size of target (2) File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_decoder.v Line: 1401
+Warning (10230): Verilog HDL assignment warning at oc8051_decoder.v(1412): truncated value with size 3 to match size of target (2) File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_decoder.v Line: 1412
+Warning (10230): Verilog HDL assignment warning at oc8051_decoder.v(1423): truncated value with size 3 to match size of target (2) File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_decoder.v Line: 1423
+Warning (10230): Verilog HDL assignment warning at oc8051_decoder.v(1434): truncated value with size 3 to match size of target (2) File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_decoder.v Line: 1434
+Warning (10230): Verilog HDL assignment warning at oc8051_decoder.v(1445): truncated value with size 3 to match size of target (2) File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_decoder.v Line: 1445
+Warning (10230): Verilog HDL assignment warning at oc8051_decoder.v(1456): truncated value with size 3 to match size of target (2) File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_decoder.v Line: 1456
+Warning (10230): Verilog HDL assignment warning at oc8051_decoder.v(1467): truncated value with size 3 to match size of target (2) File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_decoder.v Line: 1467
+Warning (10230): Verilog HDL assignment warning at oc8051_decoder.v(1478): truncated value with size 3 to match size of target (2) File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_decoder.v Line: 1478
+Warning (10230): Verilog HDL assignment warning at oc8051_decoder.v(1489): truncated value with size 3 to match size of target (2) File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_decoder.v Line: 1489
+Warning (10230): Verilog HDL assignment warning at oc8051_decoder.v(1500): truncated value with size 3 to match size of target (2) File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_decoder.v Line: 1500
+Warning (10230): Verilog HDL assignment warning at oc8051_decoder.v(1511): truncated value with size 3 to match size of target (2) File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_decoder.v Line: 1511
+Warning (10230): Verilog HDL assignment warning at oc8051_decoder.v(1522): truncated value with size 3 to match size of target (2) File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_decoder.v Line: 1522
+Warning (10230): Verilog HDL assignment warning at oc8051_decoder.v(1533): truncated value with size 3 to match size of target (2) File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_decoder.v Line: 1533
+Warning (10230): Verilog HDL assignment warning at oc8051_decoder.v(1544): truncated value with size 3 to match size of target (2) File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_decoder.v Line: 1544
+Warning (10230): Verilog HDL assignment warning at oc8051_decoder.v(1555): truncated value with size 3 to match size of target (2) File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_decoder.v Line: 1555
+Warning (10230): Verilog HDL assignment warning at oc8051_decoder.v(1566): truncated value with size 3 to match size of target (2) File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_decoder.v Line: 1566
+Warning (10230): Verilog HDL assignment warning at oc8051_decoder.v(1577): truncated value with size 3 to match size of target (2) File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_decoder.v Line: 1577
+Warning (10230): Verilog HDL assignment warning at oc8051_decoder.v(1588): truncated value with size 3 to match size of target (2) File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_decoder.v Line: 1588
+Warning (10230): Verilog HDL assignment warning at oc8051_decoder.v(1601): truncated value with size 3 to match size of target (2) File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_decoder.v Line: 1601
+Warning (10230): Verilog HDL assignment warning at oc8051_decoder.v(1612): truncated value with size 3 to match size of target (2) File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_decoder.v Line: 1612
+Warning (10230): Verilog HDL assignment warning at oc8051_decoder.v(1623): truncated value with size 3 to match size of target (2) File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_decoder.v Line: 1623
+Warning (10230): Verilog HDL assignment warning at oc8051_decoder.v(1634): truncated value with size 3 to match size of target (2) File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_decoder.v Line: 1634
+Warning (10230): Verilog HDL assignment warning at oc8051_decoder.v(1645): truncated value with size 3 to match size of target (2) File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_decoder.v Line: 1645
+Warning (10230): Verilog HDL assignment warning at oc8051_decoder.v(1656): truncated value with size 3 to match size of target (2) File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_decoder.v Line: 1656
+Warning (10230): Verilog HDL assignment warning at oc8051_decoder.v(1667): truncated value with size 3 to match size of target (2) File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_decoder.v Line: 1667
+Warning (10230): Verilog HDL assignment warning at oc8051_decoder.v(1678): truncated value with size 3 to match size of target (2) File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_decoder.v Line: 1678
+Warning (10230): Verilog HDL assignment warning at oc8051_decoder.v(1689): truncated value with size 3 to match size of target (2) File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_decoder.v Line: 1689
+Warning (10230): Verilog HDL assignment warning at oc8051_decoder.v(1700): truncated value with size 3 to match size of target (2) File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_decoder.v Line: 1700
+Warning (10230): Verilog HDL assignment warning at oc8051_decoder.v(1711): truncated value with size 3 to match size of target (2) File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_decoder.v Line: 1711
+Warning (10230): Verilog HDL assignment warning at oc8051_decoder.v(1722): truncated value with size 3 to match size of target (2) File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_decoder.v Line: 1722
+Warning (10230): Verilog HDL assignment warning at oc8051_decoder.v(1733): truncated value with size 3 to match size of target (2) File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_decoder.v Line: 1733
+Warning (10230): Verilog HDL assignment warning at oc8051_decoder.v(1744): truncated value with size 3 to match size of target (2) File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_decoder.v Line: 1744
+Warning (10230): Verilog HDL assignment warning at oc8051_decoder.v(1755): truncated value with size 3 to match size of target (2) File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_decoder.v Line: 1755
+Warning (10230): Verilog HDL assignment warning at oc8051_decoder.v(1766): truncated value with size 3 to match size of target (2) File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_decoder.v Line: 1766
+Warning (10230): Verilog HDL assignment warning at oc8051_decoder.v(1777): truncated value with size 3 to match size of target (2) File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_decoder.v Line: 1777
+Warning (10230): Verilog HDL assignment warning at oc8051_decoder.v(1788): truncated value with size 3 to match size of target (2) File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_decoder.v Line: 1788
+Warning (10230): Verilog HDL assignment warning at oc8051_decoder.v(1801): truncated value with size 3 to match size of target (2) File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_decoder.v Line: 1801
+Warning (10230): Verilog HDL assignment warning at oc8051_decoder.v(1812): truncated value with size 3 to match size of target (2) File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_decoder.v Line: 1812
+Warning (10230): Verilog HDL assignment warning at oc8051_decoder.v(1823): truncated value with size 3 to match size of target (2) File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_decoder.v Line: 1823
+Warning (10230): Verilog HDL assignment warning at oc8051_decoder.v(1834): truncated value with size 3 to match size of target (2) File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_decoder.v Line: 1834
+Warning (10230): Verilog HDL assignment warning at oc8051_decoder.v(1845): truncated value with size 3 to match size of target (2) File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_decoder.v Line: 1845
+Warning (10230): Verilog HDL assignment warning at oc8051_decoder.v(1856): truncated value with size 3 to match size of target (2) File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_decoder.v Line: 1856
+Warning (10230): Verilog HDL assignment warning at oc8051_decoder.v(1867): truncated value with size 3 to match size of target (2) File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_decoder.v Line: 1867
+Warning (10230): Verilog HDL assignment warning at oc8051_decoder.v(1878): truncated value with size 3 to match size of target (2) File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_decoder.v Line: 1878
+Warning (10230): Verilog HDL assignment warning at oc8051_decoder.v(1889): truncated value with size 3 to match size of target (2) File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_decoder.v Line: 1889
+Warning (10230): Verilog HDL assignment warning at oc8051_decoder.v(1900): truncated value with size 3 to match size of target (2) File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_decoder.v Line: 1900
+Warning (10230): Verilog HDL assignment warning at oc8051_decoder.v(1911): truncated value with size 3 to match size of target (2) File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_decoder.v Line: 1911
+Warning (10230): Verilog HDL assignment warning at oc8051_decoder.v(1922): truncated value with size 3 to match size of target (2) File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_decoder.v Line: 1922
+Warning (10230): Verilog HDL assignment warning at oc8051_decoder.v(1933): truncated value with size 3 to match size of target (2) File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_decoder.v Line: 1933
+Warning (10230): Verilog HDL assignment warning at oc8051_decoder.v(1944): truncated value with size 3 to match size of target (2) File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_decoder.v Line: 1944
+Warning (10230): Verilog HDL assignment warning at oc8051_decoder.v(1955): truncated value with size 3 to match size of target (2) File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_decoder.v Line: 1955
+Warning (10230): Verilog HDL assignment warning at oc8051_decoder.v(1966): truncated value with size 3 to match size of target (2) File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_decoder.v Line: 1966
+Warning (10230): Verilog HDL assignment warning at oc8051_decoder.v(1977): truncated value with size 3 to match size of target (2) File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_decoder.v Line: 1977
+Warning (10230): Verilog HDL assignment warning at oc8051_decoder.v(1988): truncated value with size 3 to match size of target (2) File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_decoder.v Line: 1988
+Warning (10230): Verilog HDL assignment warning at oc8051_decoder.v(1999): truncated value with size 3 to match size of target (2) File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_decoder.v Line: 1999
+Warning (10230): Verilog HDL assignment warning at oc8051_decoder.v(2010): truncated value with size 3 to match size of target (2) File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_decoder.v Line: 2010
+Warning (10230): Verilog HDL assignment warning at oc8051_decoder.v(2021): truncated value with size 3 to match size of target (2) File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_decoder.v Line: 2021
+Warning (10230): Verilog HDL assignment warning at oc8051_decoder.v(2032): truncated value with size 3 to match size of target (2) File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_decoder.v Line: 2032
+Warning (10230): Verilog HDL assignment warning at oc8051_decoder.v(2043): truncated value with size 3 to match size of target (2) File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_decoder.v Line: 2043
+Warning (10230): Verilog HDL assignment warning at oc8051_decoder.v(2054): truncated value with size 3 to match size of target (2) File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_decoder.v Line: 2054
+Warning (10230): Verilog HDL assignment warning at oc8051_decoder.v(2065): truncated value with size 3 to match size of target (2) File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_decoder.v Line: 2065
+Warning (10230): Verilog HDL assignment warning at oc8051_decoder.v(2076): truncated value with size 3 to match size of target (2) File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_decoder.v Line: 2076
+Warning (10230): Verilog HDL assignment warning at oc8051_decoder.v(2087): truncated value with size 3 to match size of target (2) File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_decoder.v Line: 2087
+Warning (10230): Verilog HDL assignment warning at oc8051_decoder.v(2098): truncated value with size 3 to match size of target (2) File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_decoder.v Line: 2098
+Warning (10230): Verilog HDL assignment warning at oc8051_decoder.v(2109): truncated value with size 3 to match size of target (2) File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_decoder.v Line: 2109
+Warning (10230): Verilog HDL assignment warning at oc8051_decoder.v(2120): truncated value with size 3 to match size of target (2) File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_decoder.v Line: 2120
+Warning (10230): Verilog HDL assignment warning at oc8051_decoder.v(2131): truncated value with size 3 to match size of target (2) File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_decoder.v Line: 2131
+Warning (10230): Verilog HDL assignment warning at oc8051_decoder.v(2142): truncated value with size 3 to match size of target (2) File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_decoder.v Line: 2142
+Warning (10230): Verilog HDL assignment warning at oc8051_decoder.v(2153): truncated value with size 3 to match size of target (2) File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_decoder.v Line: 2153
+Warning (10230): Verilog HDL assignment warning at oc8051_decoder.v(2164): truncated value with size 3 to match size of target (2) File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_decoder.v Line: 2164
+Warning (10230): Verilog HDL assignment warning at oc8051_decoder.v(2175): truncated value with size 3 to match size of target (2) File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_decoder.v Line: 2175
+Warning (10230): Verilog HDL assignment warning at oc8051_decoder.v(2186): truncated value with size 3 to match size of target (2) File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_decoder.v Line: 2186
+Warning (10230): Verilog HDL assignment warning at oc8051_decoder.v(2197): truncated value with size 3 to match size of target (2) File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_decoder.v Line: 2197
+Warning (10230): Verilog HDL assignment warning at oc8051_decoder.v(2208): truncated value with size 3 to match size of target (2) File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_decoder.v Line: 2208
+Warning (10230): Verilog HDL assignment warning at oc8051_decoder.v(2219): truncated value with size 3 to match size of target (2) File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_decoder.v Line: 2219
+Warning (10230): Verilog HDL assignment warning at oc8051_decoder.v(2230): truncated value with size 3 to match size of target (2) File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_decoder.v Line: 2230
+Warning (10230): Verilog HDL assignment warning at oc8051_decoder.v(2241): truncated value with size 3 to match size of target (2) File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_decoder.v Line: 2241
+Warning (10230): Verilog HDL assignment warning at oc8051_decoder.v(2252): truncated value with size 3 to match size of target (2) File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_decoder.v Line: 2252
+Warning (10230): Verilog HDL assignment warning at oc8051_decoder.v(2263): truncated value with size 3 to match size of target (2) File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_decoder.v Line: 2263
+Warning (10230): Verilog HDL assignment warning at oc8051_decoder.v(2274): truncated value with size 3 to match size of target (2) File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_decoder.v Line: 2274
+Warning (10230): Verilog HDL assignment warning at oc8051_decoder.v(2285): truncated value with size 3 to match size of target (2) File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_decoder.v Line: 2285
+Warning (10230): Verilog HDL assignment warning at oc8051_decoder.v(2296): truncated value with size 3 to match size of target (2) File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_decoder.v Line: 2296
+Warning (10230): Verilog HDL assignment warning at oc8051_decoder.v(2307): truncated value with size 3 to match size of target (2) File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_decoder.v Line: 2307
+Warning (10230): Verilog HDL assignment warning at oc8051_decoder.v(2318): truncated value with size 3 to match size of target (2) File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_decoder.v Line: 2318
+Warning (10230): Verilog HDL assignment warning at oc8051_decoder.v(2329): truncated value with size 3 to match size of target (2) File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_decoder.v Line: 2329
+Warning (10230): Verilog HDL assignment warning at oc8051_decoder.v(2340): truncated value with size 3 to match size of target (2) File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_decoder.v Line: 2340
+Warning (10230): Verilog HDL assignment warning at oc8051_decoder.v(2351): truncated value with size 3 to match size of target (2) File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_decoder.v Line: 2351
+Warning (10230): Verilog HDL assignment warning at oc8051_decoder.v(2362): truncated value with size 3 to match size of target (2) File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_decoder.v Line: 2362
+Warning (10230): Verilog HDL assignment warning at oc8051_decoder.v(2373): truncated value with size 3 to match size of target (2) File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_decoder.v Line: 2373
+Warning (10230): Verilog HDL assignment warning at oc8051_decoder.v(2384): truncated value with size 3 to match size of target (2) File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_decoder.v Line: 2384
+Warning (10230): Verilog HDL assignment warning at oc8051_decoder.v(2395): truncated value with size 3 to match size of target (2) File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_decoder.v Line: 2395
+Warning (10230): Verilog HDL assignment warning at oc8051_decoder.v(2406): truncated value with size 3 to match size of target (2) File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_decoder.v Line: 2406
+Warning (10230): Verilog HDL assignment warning at oc8051_decoder.v(2417): truncated value with size 3 to match size of target (2) File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_decoder.v Line: 2417
+Warning (10230): Verilog HDL assignment warning at oc8051_decoder.v(2428): truncated value with size 3 to match size of target (2) File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_decoder.v Line: 2428
+Warning (10230): Verilog HDL assignment warning at oc8051_decoder.v(2439): truncated value with size 3 to match size of target (2) File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_decoder.v Line: 2439
+Warning (10230): Verilog HDL assignment warning at oc8051_decoder.v(2450): truncated value with size 3 to match size of target (2) File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_decoder.v Line: 2450
+Warning (10230): Verilog HDL assignment warning at oc8051_decoder.v(2461): truncated value with size 3 to match size of target (2) File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_decoder.v Line: 2461
+Warning (10230): Verilog HDL assignment warning at oc8051_decoder.v(2472): truncated value with size 3 to match size of target (2) File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_decoder.v Line: 2472
+Warning (10230): Verilog HDL assignment warning at oc8051_decoder.v(2483): truncated value with size 3 to match size of target (2) File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_decoder.v Line: 2483
+Warning (10230): Verilog HDL assignment warning at oc8051_decoder.v(2494): truncated value with size 3 to match size of target (2) File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_decoder.v Line: 2494
+Warning (10230): Verilog HDL assignment warning at oc8051_decoder.v(2505): truncated value with size 3 to match size of target (2) File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_decoder.v Line: 2505
+Warning (10230): Verilog HDL assignment warning at oc8051_decoder.v(2516): truncated value with size 3 to match size of target (2) File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_decoder.v Line: 2516
+Warning (10230): Verilog HDL assignment warning at oc8051_decoder.v(2527): truncated value with size 3 to match size of target (2) File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_decoder.v Line: 2527
+Warning (10230): Verilog HDL assignment warning at oc8051_decoder.v(2538): truncated value with size 3 to match size of target (2) File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_decoder.v Line: 2538
+Warning (10230): Verilog HDL assignment warning at oc8051_decoder.v(2549): truncated value with size 3 to match size of target (2) File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_decoder.v Line: 2549
+Warning (10230): Verilog HDL assignment warning at oc8051_decoder.v(2560): truncated value with size 3 to match size of target (2) File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_decoder.v Line: 2560
+Warning (10230): Verilog HDL assignment warning at oc8051_decoder.v(2571): truncated value with size 3 to match size of target (2) File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_decoder.v Line: 2571
+Warning (10230): Verilog HDL assignment warning at oc8051_decoder.v(2582): truncated value with size 3 to match size of target (2) File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_decoder.v Line: 2582
+Warning (10230): Verilog HDL assignment warning at oc8051_decoder.v(2593): truncated value with size 3 to match size of target (2) File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_decoder.v Line: 2593
+Warning (10230): Verilog HDL assignment warning at oc8051_decoder.v(2604): truncated value with size 3 to match size of target (2) File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_decoder.v Line: 2604
+Warning (10230): Verilog HDL assignment warning at oc8051_decoder.v(2615): truncated value with size 3 to match size of target (2) File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_decoder.v Line: 2615
+Warning (10208): Verilog HDL Case Statement warning at oc8051_decoder.v(2647): honored full_case synthesis attribute - differences between design synthesis and simulation may occur File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_decoder.v Line: 2647
+Info (12128): Elaborating entity "oc8051_alu" for hierarchy "oc8051_alu:oc8051_alu1" File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_top.v Line: 414
+Warning (10240): Verilog HDL Always Construct warning at oc8051_alu.v(197): inferring latch(es) for variable "da_tmp", which holds its previous value in one or more paths through the always construct File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_alu.v Line: 197
+Warning (10240): Verilog HDL Always Construct warning at oc8051_alu.v(197): inferring latch(es) for variable "da_tmp1", which holds its previous value in one or more paths through the always construct File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_alu.v Line: 197
+Info (12128): Elaborating entity "oc8051_multiply" for hierarchy "oc8051_alu:oc8051_alu1|oc8051_multiply:oc8051_mul1" File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_alu.v Line: 156
+Info (12128): Elaborating entity "oc8051_divide" for hierarchy "oc8051_alu:oc8051_alu1|oc8051_divide:oc8051_div1" File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_alu.v Line: 157
+Info (12128): Elaborating entity "oc8051_ram_top" for hierarchy "oc8051_ram_top:oc8051_ram_top1" File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_top.v Line: 436
+Warning (10230): Verilog HDL assignment warning at oc8051_ram_top.v(198): truncated value with size 16 to match size of target (8) File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_ram_top.v Line: 198
+Warning (10230): Verilog HDL assignment warning at oc8051_ram_top.v(199): truncated value with size 16 to match size of target (8) File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_ram_top.v Line: 199
+Info (12128): Elaborating entity "oc8051_ram_256x8_two_bist" for hierarchy "oc8051_ram_top:oc8051_ram_top1|oc8051_ram_256x8_two_bist:oc8051_idata" File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_ram_top.v Line: 165
+Info (12128): Elaborating entity "generic_dpram" for hierarchy "oc8051_ram_top:oc8051_ram_top1|oc8051_ram_256x8_two_bist:oc8051_idata|generic_dpram:oc8051_ram1" File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_ram_256x8_two_bist.v Line: 146
+Info (12128): Elaborating entity "oc8051_alu_src_sel" for hierarchy "oc8051_alu_src_sel:oc8051_alu_src_sel1" File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_top.v Line: 458
+Warning (10208): Verilog HDL Case Statement warning at oc8051_alu_src_sel.v(97): honored full_case synthesis attribute - differences between design synthesis and simulation may occur File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_alu_src_sel.v Line: 97
+Info (12128): Elaborating entity "oc8051_comp" for hierarchy "oc8051_comp:oc8051_comp1" File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_top.v Line: 469
+Info (12128): Elaborating entity "oc8051_cy_select" for hierarchy "oc8051_cy_select:oc8051_cy_select1" File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_top.v Line: 503
+Info (12128): Elaborating entity "oc8051_indi_addr" for hierarchy "oc8051_indi_addr:oc8051_indi_addr1" File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_top.v Line: 514
+Warning (10208): Verilog HDL Case Statement warning at oc8051_indi_addr.v(100): honored full_case synthesis attribute - differences between design synthesis and simulation may occur File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_indi_addr.v Line: 100
+Info (12128): Elaborating entity "oc8051_memory_interface" for hierarchy "oc8051_memory_interface:oc8051_memory_interface1" File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_top.v Line: 595
+Warning (10036): Verilog HDL or VHDL warning at oc8051_memory_interface.v(192): object "sp_r" assigned a value but never read File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_memory_interface.v Line: 192
+Warning (10036): Verilog HDL or VHDL warning at oc8051_memory_interface.v(292): object "op1_xt" assigned a value but never read File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_memory_interface.v Line: 292
+Warning (10036): Verilog HDL or VHDL warning at oc8051_memory_interface.v(293): object "op2_xt" assigned a value but never read File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_memory_interface.v Line: 293
+Warning (10036): Verilog HDL or VHDL warning at oc8051_memory_interface.v(294): object "op3_xt" assigned a value but never read File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_memory_interface.v Line: 294
+Warning (10036): Verilog HDL or VHDL warning at oc8051_memory_interface.v(315): object "int_buff1" assigned a value but never read File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_memory_interface.v Line: 315
+Warning (10036): Verilog HDL or VHDL warning at oc8051_memory_interface.v(345): object "inc_pc_r" assigned a value but never read File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_memory_interface.v Line: 345
+Warning (10208): Verilog HDL Case Statement warning at oc8051_memory_interface.v(426): honored full_case synthesis attribute - differences between design synthesis and simulation may occur File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_memory_interface.v Line: 426
+Warning (10230): Verilog HDL assignment warning at oc8051_memory_interface.v(468): truncated value with size 23 to match size of target (16) File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_memory_interface.v Line: 468
+Warning (10230): Verilog HDL assignment warning at oc8051_memory_interface.v(501): truncated value with size 23 to match size of target (16) File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_memory_interface.v Line: 501
+Warning (10230): Verilog HDL assignment warning at oc8051_memory_interface.v(512): truncated value with size 23 to match size of target (16) File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_memory_interface.v Line: 512
+Warning (10230): Verilog HDL assignment warning at oc8051_memory_interface.v(519): truncated value with size 23 to match size of target (16) File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_memory_interface.v Line: 519
+Warning (10230): Verilog HDL assignment warning at oc8051_memory_interface.v(526): truncated value with size 23 to match size of target (16) File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_memory_interface.v Line: 526
+Warning (10230): Verilog HDL assignment warning at oc8051_memory_interface.v(533): truncated value with size 23 to match size of target (16) File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_memory_interface.v Line: 533
+Warning (10208): Verilog HDL Case Statement warning at oc8051_memory_interface.v(507): honored full_case synthesis attribute - differences between design synthesis and simulation may occur File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_memory_interface.v Line: 507
+Warning (10240): Verilog HDL Always Construct warning at oc8051_memory_interface.v(918): inferring latch(es) for variable "pcs_cy", which holds its previous value in one or more paths through the always construct File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_memory_interface.v Line: 918
+Warning (10230): Verilog HDL assignment warning at oc8051_memory_interface.v(944): truncated value with size 23 to match size of target (16) File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_memory_interface.v Line: 944
+Warning (10208): Verilog HDL Case Statement warning at oc8051_memory_interface.v(948): honored full_case synthesis attribute - differences between design synthesis and simulation may occur File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_memory_interface.v Line: 948
+Info (12128): Elaborating entity "oc8051_sfr" for hierarchy "oc8051_sfr:oc8051_sfr1" File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_top.v Line: 684
+Warning (10036): Verilog HDL or VHDL warning at oc8051_sfr.v(247): object "adr0_r" assigned a value but never read File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_sfr.v Line: 247
+Warning (10036): Verilog HDL or VHDL warning at oc8051_sfr.v(250): object "ram_wr_sel_r" assigned a value but never read File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_sfr.v Line: 250
+Warning (10208): Verilog HDL Case Statement warning at oc8051_sfr.v(593): honored full_case synthesis attribute - differences between design synthesis and simulation may occur File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_sfr.v Line: 593
+Warning (10208): Verilog HDL Case Statement warning at oc8051_sfr.v(669): honored full_case synthesis attribute - differences between design synthesis and simulation may occur File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_sfr.v Line: 669
+Info (12128): Elaborating entity "oc8051_acc" for hierarchy "oc8051_sfr:oc8051_sfr1|oc8051_acc:oc8051_acc1" File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_sfr.v Line: 321
+Info (12128): Elaborating entity "oc8051_b_register" for hierarchy "oc8051_sfr:oc8051_sfr1|oc8051_b_register:oc8051_b_register" File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_sfr.v Line: 334
+Info (12128): Elaborating entity "oc8051_sp" for hierarchy "oc8051_sfr:oc8051_sfr1|oc8051_sp:oc8051_sp1" File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_sfr.v Line: 348
+Info (12128): Elaborating entity "oc8051_dptr" for hierarchy "oc8051_sfr:oc8051_sfr1|oc8051_dptr:oc8051_dptr1" File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_sfr.v Line: 362
+Info (12128): Elaborating entity "oc8051_psw" for hierarchy "oc8051_sfr:oc8051_sfr1|oc8051_psw:oc8051_psw1" File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_sfr.v Line: 380
+Warning (10230): Verilog HDL assignment warning at oc8051_psw.v(109): truncated value with size 8 to match size of target (7) File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_psw.v Line: 109
+Warning (10208): Verilog HDL Case Statement warning at oc8051_psw.v(121): honored full_case synthesis attribute - differences between design synthesis and simulation may occur File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_psw.v Line: 121
+Info (12128): Elaborating entity "oc8051_ports" for hierarchy "oc8051_sfr:oc8051_sfr1|oc8051_ports:oc8051_ports1" File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_sfr.v Line: 418
+Warning (10208): Verilog HDL Case Statement warning at oc8051_ports.v(174): honored full_case synthesis attribute - differences between design synthesis and simulation may occur File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_ports.v Line: 174
+Warning (10208): Verilog HDL Case Statement warning at oc8051_ports.v(194): honored full_case synthesis attribute - differences between design synthesis and simulation may occur File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_ports.v Line: 194
+Info (12128): Elaborating entity "oc8051_uart" for hierarchy "oc8051_sfr:oc8051_sfr1|oc8051_uart:oc8051_uatr1" File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_sfr.v Line: 445
+Warning (10036): Verilog HDL or VHDL warning at oc8051_uart.v(131): object "rb8" assigned a value but never read File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_uart.v Line: 131
+Warning (10208): Verilog HDL Case Statement warning at oc8051_uart.v(289): honored full_case synthesis attribute - differences between design synthesis and simulation may occur File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_uart.v Line: 289
+Info (12128): Elaborating entity "oc8051_int" for hierarchy "oc8051_sfr:oc8051_sfr1|oc8051_int:oc8051_int1" File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_sfr.v Line: 474
+Warning (10230): Verilog HDL assignment warning at oc8051_int.v(118): truncated value with size 2 to match size of target (1) File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_int.v Line: 118
+Warning (10208): Verilog HDL Case Statement warning at oc8051_int.v(192): honored full_case synthesis attribute - differences between design synthesis and simulation may occur File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_int.v Line: 192
+Info (12128): Elaborating entity "oc8051_tc" for hierarchy "oc8051_sfr:oc8051_sfr1|oc8051_tc:oc8051_tc1" File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_sfr.v Line: 500
+Warning (10208): Verilog HDL Case Statement warning at oc8051_tc.v(203): honored full_case synthesis attribute - differences between design synthesis and simulation may occur File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_tc.v Line: 203
+Info (12128): Elaborating entity "oc8051_tc2" for hierarchy "oc8051_sfr:oc8051_sfr1|oc8051_tc2:oc8051_tc21" File: D:/git/my8051/EP4CE/source/rtl/verilog/oc8051_sfr.v Line: 528
+Info: Quartus Prime Analysis & Elaboration was successful. 0 errors, 170 warnings
+    Info: Peak virtual memory: 4765 megabytes
+    Info: Processing ended: Mon Nov  9 21:34:56 2026
+    Info: Elapsed time: 00:00:09
+    Info: Total CPU time (on all processors): 00:00:22
+
+
