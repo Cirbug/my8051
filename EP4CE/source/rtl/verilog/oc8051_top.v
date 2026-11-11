@@ -113,7 +113,7 @@
 `include "oc8051_defines.v"
 
 module oc8051_top (wb_rst_i, wb_clk_i,
-//interface to instruction rom
+//interface to instruction rom// 连接指令只读存储器的接口
 		wbi_adr_o, 
 		wbi_dat_i, 
 		wbi_stb_o, 
@@ -131,12 +131,12 @@ module oc8051_top (wb_rst_i, wb_clk_i,
 		wbd_cyc_o, 
 		wbd_err_i,
 
-// interrupt interface
+// interrupt interface 中断
 		int0_i, 
 		int1_i,
 
 
-// port interface
+// port interface   端口
   `ifdef OC8051_PORTS
 	`ifdef OC8051_PORT0
 		p0_i,
@@ -159,12 +159,12 @@ module oc8051_top (wb_rst_i, wb_clk_i,
 	`endif
   `endif
 
-// serial interface
+// serial interface   串口
 	`ifdef OC8051_UART
 		rxd_i, txd_o,
 	`endif
 
-// counter interface
+// counter interface 计数器
 	`ifdef OC8051_TC01
 		t0_i, t1_i,
 	`endif
@@ -173,7 +173,7 @@ module oc8051_top (wb_rst_i, wb_clk_i,
 		t2_i, t2ex_i,
 	`endif
 
-// BIST
+// BIST  内建自测试
 `ifdef OC8051_BIST
          scanb_rst,
          scanb_clk,
@@ -181,7 +181,7 @@ module oc8051_top (wb_rst_i, wb_clk_i,
          scanb_so,
          scanb_en,
 `endif
-// external access (active low)
+// external access (active low)  外部访问（低电平有效）
 		ea_in
 		);
 
