@@ -504,8 +504,8 @@ begin
     dstb_o <= #1 1'b0;
     dmem_wait <= #1 1'b0;
   end else begin
-    case (mem_act) /* synopsys full_case parallel_case */
-      `OC8051_MAS_DPTR_R: begin  // read from external rom: acc=(dptr)
+    case (mem_act) //// 未匹配时保持寄存器原值
+      `OC8051_MAS_DPTR_R: begin  // read from external rom: acc=(dptr)  从外部只读存储器读取：累加器 =（数据指针）
         dwe_o <= #1 1'b0;
         dstb_o <= #1 1'b1;
         ddat_o <= #1 8'h00;

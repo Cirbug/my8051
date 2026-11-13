@@ -7,8 +7,8 @@ module fpga_top(
 
 //1.复位
 reg [1:0] rst_sync;
- always@(posedge clk or posedge rst_n)begin
-	if (rst_n)
+ always@(posedge clk or negedge rst_n)begin
+	if (!rst_n)
 		rst_sync <= 2'b11;
 	else 
 		rst_sync <= {rst_sync[0],1'b0};

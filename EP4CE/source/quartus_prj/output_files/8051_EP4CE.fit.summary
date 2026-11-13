@@ -1,16 +1,16 @@
-Fitter Status : Successful - Wed Nov 11 22:41:44 2026
+Fitter Status : Successful - Fri Nov 13 21:40:12 2026
 Quartus Prime Version : 25.1std.0 Build 1129 10/21/2025 SC Lite Edition
 Revision Name : 8051_EP4CE
 Top-level Entity Name : fpga_top
 Family : Cyclone IV E
 Device : EP4CE10F17C8
 Timing Models : Final
-Total logic elements : 3,161 / 10,320 ( 31 % )
-    Total combinational functions : 2,700 / 10,320 ( 26 % )
-    Dedicated logic registers : 1,343 / 10,320 ( 13 % )
-Total registers : 1343
+Total logic elements : 3,562 / 10,320 ( 35 % )
+    Total combinational functions : 2,812 / 10,320 ( 27 % )
+    Dedicated logic registers : 1,728 / 10,320 ( 17 % )
+Total registers : 1728
 Total pins : 3 / 180 ( 2 % )
 Total virtual pins : 0
-Total memory bits : 19,200 / 423,936 ( 5 % )
+Total memory bits : 35,584 / 423,936 ( 8 % )
 Embedded Multiplier 9-bit elements : 0 / 46 ( 0 % )
 Total PLLs : 0 / 2 ( 0 % )
